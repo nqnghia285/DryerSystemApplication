@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_machine_system">
+
+    <fragment
+        android:id="@+id/nav_machine_system"
+        android:name="com.nqnghia.dryersystemapplication.ui.machine_system.MachineSystemFragment"
+        android:label="@string/menu_machine_system"
+        tools:layout="@layout/fragment_machine_system" >
+        <action
+            android:id="@+id/action_nav_machine_system_to_nav_machine_info"
+            app:destination="@id/nav_machine_info" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_machine_info"
+        android:name="com.nqnghia.dryersystemapplication.ui.machine_info.MachineInfoFragment"
+        android:label="@string/fragment_machine_info"
+        tools:layout="@layout/fragment_machine_info">
+        <argument
+            android:name="imageResource"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="MachineTitle"
+            app:argType="string"
+            android:defaultValue="Máy số 01"/>
+        <argument
+            android:name="machineInfo"
+            app:argType="string"
+            android:defaultValue="Thông tin thiết lập:"/>
+        <argument
+            android:name="beginTimeTitle"
+            app:argType="string"
+            android:defaultValue="Thời gian bắt đầu:"/>
+        <argument
+            android:name="beginTimeTextView"
+            app:argType="string"
+            android:defaultValue="12:00:00" />
+        <argument
+            android:name="completedTimeTitle"
+            app:argType="string"
+            android:defaultValue="Thời gian kết thúc:"/>
+        <argument
+            android:name="completedTimeTextView"
+            app:argType="string"
+            android:defaultValue="12:00:00" />
+        <argument
+            android:name="temperatureTitle"
+            app:argType="string"
+            android:defaultValue="Nhiệt độ:"/>
+        <argument
+            android:name="temperatureTextView"
+            app:argType="string"
+            android:defaultValue="65" />
+        <argument
+            android:name="humidityTitle"
+            app:argType="string"
+            android:defaultValue="Độ ẩm:"/>
+        <argument
+            android:name="humidityTextView"
+            app:argType="string"
+            android:defaultValue="80" />
+        <argument
+            android:name="foodTypeTitle"
+            app:argType="string"
+            android:defaultValue="Loại nguyên liệu:"/>
+        <argument
+            android:name="foodTypeTextView"
+            app:argType="string"
+            android:defaultValue="Chile" />
+        <argument
+            android:name="weighTitle"
+            app:argType="string"
+            android:defaultValue="Khối lượng:"/>
+        <argument
+            android:name="weighTextView"
+            app:argType="string"
+            android:defaultValue="200" />
+        <argument
+            android:name="currentTemperatureHumidityTitle"
+            app:argType="string"
+            android:defaultValue="Nhiệt độ và độ ẩm hiện tại:"/>
+        <argument
+            android:name="currentTemperatureTitle"
+            app:argType="string"
+            android:defaultValue="Nhiệt độ:"/>
+        <argument
+            android:name="currentTemperatureTextView"
+            app:argType="string"
+            android:defaultValue="65" />
+        <argument
+            android:name="currentHumidityTitle"
+            app:argType="string"
+            android:defaultValue="Độ ẩm:"/>
+        <argument
+            android:name="currentHumidityTextView"
+            app:argType="string"
+            android:defaultValue="75" />
+        <argument
+            android:name="statusFanTitle"
+            app:argType="string"
+            android:defaultValue="Trạng thái quạt:"/>
+        <argument
+            android:name="blowerFanTitle"
+            app:argType="string"
+            android:defaultValue="Quạt thổi:"/>
+        <argument
+            android:name="closedBlowerFanTextView"
+            app:argType="string"
+            android:defaultValue="Tắt"/>
+        <argument
+            android:name="blowerFanSwitch"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <argument
+            android:name="openedBlowerFanTextView"
+            app:argType="string"
+            android:defaultValue="Mở"/>
+        <argument
+            android:name="exhaustFanTitle"
+            app:argType="string"
+            android:defaultValue="Quạt hút:"/>
+        <argument
+            android:name="closedExhaustFanTextView"
+            app:argType="string"
+            android:defaultValue="Tắt"/>
+        <argument
+            android:name="exhaustFanSwitch"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <argument
+            android:name="openedExhaustFanTextView"
+            app:argType="string"
+            android:defaultValue="Mở"/>
+        <action
+            android:id="@+id/action_nav_machine_info_to_humidityTemperatureFragment"
+            app:destination="@id/humidityTemperatureFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_device_sensor"
+        android:name="com.nqnghia.dryersystemapplication.ui.device_sensor.DeviceSensorFragment"
+        android:label="@string/menu_status_devices_and_sensor"
+        tools:layout="@layout/fragment_device_sensor" />
+
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.nqnghia.dryersystemapplication.ui.notifications.NotificationsFragment"
+        android:label="@string/menu_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/nav_recipes"
+        android:name="com.nqnghia.dryersystemapplication.ui.recipes.RecipesFragment"
+        android:label="@string/menu_recipes"
+        tools:layout="@layout/fragment_recipes" />
+
+    <fragment
+        android:id="@+id/nav_tasks"
+        android:name="com.nqnghia.dryersystemapplication.ui.tasks.TasksFragment"
+        android:label="@string/menu_tasks"
+        tools:layout="@layout/fragment_tasks" />
+
+    <fragment
+        android:id="@+id/nav_statistics"
+        android:name="com.nqnghia.dryersystemapplication.ui.statistics.StatisticsFragment"
+        android:label="@string/menu_statistical"
+        tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.nqnghia.dryersystemapplication.ui.account.AccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.nqnghia.dryersystemapplication.ui.setting.SettingFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.nqnghia.dryersystemapplication.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/humidityTemperatureFragment"
+        android:name="com.nqnghia.dryersystemapplication.ui.humidity_temperature_chart.HumidityTemperatureFragment"
+        android:label="HumidityTemperatureFragment" />
+
+</navigation>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">DryerSystemApplication</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_select_all">Chọn tất cả</string>
+    <string name="action_uncheck_all">Hủy chọn tất cả</string>
+
+    <string name="menu_machine_system">Hệ thống máy sấy</string>
+    <string name="fragment_machine_info">Thông tin máy sấy</string>
+    <string name="menu_status_devices_and_sensor">Trạng thái thiết bị và cảm biến</string>
+    <string name="menu_notifications">Thông báo</string>
+    <string name="menu_recipes">Công thức sấy</string>
+    <string name="menu_tasks">Công việc</string>
+    <string name="menu_statistical">Thống kê</string>
+    <string name="menu_account">Thông tin tài khoản</string>
+    <string name="menu_settings">Cài đặt</string>
+    <string name="menu_about">Giới thiệu ứng dụng</string>
+    <string name="menu_logout">Đăng xuất</string>
+    <string name="fragment_machine_list">Danh sách máy sấy</string>
+    <string name="fragment_humidity_temperature_chart">Biểu đồ nhiệt độ và độ ẩm</string>
+    <string name="login">Đăng nhập</string>
+
+    <!--oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+
+    <string name="running">Đang hoạt động</string>
+    <string name="stopped">Ngừng hoạt động</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_logout_notification">THÔNG BÁO</string>
+    <string name="text_logout_notification_content">Bạn muốn đăng xuất?</string>
+</resources>

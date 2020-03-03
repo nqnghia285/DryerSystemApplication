@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_machine_system"
+            android:icon="@mipmap/ic_menu_machine_system"
+            android:title="@string/menu_machine_system" />
+        <item
+            android:id="@+id/nav_device_sensor"
+            android:icon="@mipmap/ic_menu_device_sensor"
+            android:title="@string/menu_status_devices_and_sensor" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@mipmap/ic_menu_notifications"
+            android:title="@string/menu_notifications" />
+        <item
+            android:id="@+id/nav_recipes"
+            android:icon="@mipmap/ic_menu_recipes"
+            android:title="@string/menu_recipes" />
+        <item
+            android:id="@+id/nav_tasks"
+            android:icon="@mipmap/ic_menu_tasks"
+            android:title="@string/menu_tasks" />
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@mipmap/ic_menu_statistics"
+            android:title="@string/menu_statistical" />
+    </group>
+
+    <item android:title="Ứng dụng">
+        <menu>
+            <item
+                android:id="@+id/nav_account"
+                android:icon="@mipmap/ic_menu_account"
+                android:title="@string/menu_account" />
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@mipmap/ic_menu_settings"
+                android:title="@string/menu_settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@mipmap/ic_menu_about"
+                android:title="@string/menu_about" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@mipmap/ic_menu_logout"
+                android:title="@string/menu_logout" />
+        </menu>
+    </item>
+
+</menu>

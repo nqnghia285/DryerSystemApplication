@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="2dp"
+            android:id="@+id/image_card_view"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_menu_account"/>
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_card_view"
+            android:text="Title"
+            android:layout_marginStart="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/HanPurple"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/status_title"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:text="Trạng thái hoạt động:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="55dp"/>
+
+        <TextView
+            android:id="@+id/status_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="55dp"
+            android:text="@string/running"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <TextView
+            android:id="@+id/begin_time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="85dp"
+            android:text="Thời gian bắt đầu:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/begin_time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="85dp"
+            android:text="12:30:25"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="115dp"
+            android:text="Thời gian kết thúc:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/completed_time_title"/>
+
+        <TextView
+            android:id="@+id/completed_time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="115dp"
+            android:text="13:30:25"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="145dp"
+            android:text="Loại nguyên liệu:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/food_type_title"/>
+
+        <TextView
+            android:id="@+id/food_type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="145dp"
+            android:text="Mit tuoi"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="175dp"
+            android:text="Khối lượng:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/weigh_title"/>
+
+        <TextView
+            android:id="@+id/weigh_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/kg"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="175dp"
+            android:text="100"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <katex.hourglass.in.mathlib.MathView
+            android:id="@+id/kg"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="175dp"
+            app:setText="$Kg$"
+            app:setTextColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="205dp"
+            android:text="Nhiệt độ hiện tại:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/current_temperature_title"/>
+
+        <TextView
+            android:id="@+id/current_temperature_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/temp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="205dp"
+            android:text="65"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <katex.hourglass.in.mathlib.MathView
+            android:id="@+id/temp"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="205dp"
+            app:setText="$\\degree C$"
+            app:setTextColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="235dp"
+            android:text="Độ ẩm hiện tại:"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/current_humidity_title"/>
+
+        <TextView
+            android:id="@+id/current_humidity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/temp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="235dp"
+            android:text="65"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Blue"/>
+
+        <katex.hourglass.in.mathlib.MathView
+            android:id="@+id/hum"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="235dp"
+            app:setText="$\\%$"
+            app:setTextColor="@color/Blue"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
