@@ -16,6 +16,8 @@ import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -80,6 +82,14 @@ public class MachineInfoFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Call setHasOptionsMenu() to Fragment can setup menu
+        setHasOptionsMenu(true);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -89,7 +99,7 @@ public class MachineInfoFragment extends Fragment {
 
         imageView = root.findViewById(R.id.machine_image);
         machineTitle = root.findViewById(R.id.machine_title);
-        machineInfo = root.findViewById(R.id.machine_infomation);
+        machineInfo = root.findViewById(R.id.machine_info);
         beginTimeTitle = root.findViewById(R.id.begin_time_title);
         beginTimeTextView = root.findViewById(R.id.begin_time_text_view);
         completedTimeTitle = root.findViewById(R.id.completed_time_title);
@@ -157,5 +167,12 @@ public class MachineInfoFragment extends Fragment {
             exhaustFanSwitch.setChecked(args.getExhaustFanSwitch());
             openedExhaustFanTextView.setText(args.getOpenedExhaustFanTextView());
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        //TODO
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

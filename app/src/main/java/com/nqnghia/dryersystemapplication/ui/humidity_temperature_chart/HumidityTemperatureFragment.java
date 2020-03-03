@@ -1,5 +1,6 @@
 package com.nqnghia.dryersystemapplication.ui.humidity_temperature_chart;
 
+import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Context;
@@ -10,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -44,6 +47,14 @@ public class HumidityTemperatureFragment extends Fragment {
 
     private Random random = new Random();
     private MainActivity mainActivity;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Call setHasOptionsMenu() to Fragment can setup menu
+        setHasOptionsMenu(true);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -144,5 +155,12 @@ public class HumidityTemperatureFragment extends Fragment {
             mainActivity = (MainActivity) context;
 //            mainActivity.getFab().hide();
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        //TODO
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

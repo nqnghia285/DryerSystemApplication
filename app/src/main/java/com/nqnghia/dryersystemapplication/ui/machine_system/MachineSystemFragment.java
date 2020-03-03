@@ -1,19 +1,25 @@
 package com.nqnghia.dryersystemapplication.ui.machine_system;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
@@ -55,6 +61,14 @@ public class MachineSystemFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Call setHasOptionsMenu() to Fragment can setup menu
+        setHasOptionsMenu(true);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -66,55 +80,133 @@ public class MachineSystemFragment extends Fragment {
         createItemList();
         buildRecyclerView();
 
-        mainActivity.setItemSelectedListener(item -> {
-            Log.e(TAG, "onOptionsItemSelected: ");
-            switch (item.getItemId()) {
-                case R.id.action_select_all:
-                    for (MachineItem machineItem : mItems) {
-                        machineItem.setSelected(true);
-                    }
-                    mAdapter.notifyDataSetChanged();
-                    break;
-                case R.id.action_uncheck_all:
-                    for (MachineItem machineItem : mItems) {
-                        machineItem.setSelected(false);
-                    }
-                    mAdapter.notifyDataSetChanged();
-                    break;
-                default:
-                    break;
-            }
-        });
-
         return root;
     }
 
-    void createItemList() {
-        mItems = new ArrayList<>();
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 01", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 02", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 03", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 04", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 05", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 06", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 07", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 08", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 09", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 10", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 11", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 12", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 13", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 14", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 15", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 16", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 17", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 18", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 19", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_share, "Máy số 20", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 21", "Trạng thái hoạt động:", "Đang hoạt động", "Thời gian bắt đầu:", "12:30:25", "Thời gian kết thúc:", "13:30:25", "Loại nguyên liệu:", "Mit tuoi", "Khối lượng:", "100", "Nhiệt độ hiện tại:", "65", "Độ ẩm hiện tại:", "65"));
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        if (mainActivity != null) {
+            mainActivity.getFab().setOnClickListener(v -> {
+                showMachineItemDialog();
+            });
+        }
     }
 
-    void buildRecyclerView() {
+    // setup action menu from fragment
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        inflater.inflate(R.menu.machine_system_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_select_all:
+                for (MachineItem machineItem : mItems) {
+                    machineItem.setSelected(true);
+                }
+                mAdapter.notifyDataSetChanged();
+                break;
+            case R.id.action_uncheck_all:
+                for (MachineItem machineItem : mItems) {
+                    machineItem.setSelected(false);
+                }
+                mAdapter.notifyDataSetChanged();
+                break;
+            case R.id.action_remove:
+                int position = 0;
+                while (position < mItems.size()) {
+                    if (mItems.get(position).getSelected()) {
+                        mItems.remove(position);
+                    } else {
+                        position++;
+                    }
+                }
+                mAdapter.notifyDataSetChanged();
+                break;
+            case R.id.action_add_item:
+                showMachineItemDialog();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showMachineItemDialog() {
+        LayoutInflater inflater = LayoutInflater.from(mainActivity);
+        View vi = inflater.inflate(R.layout.machine_item_dialog, null);
+
+        EditText machine = vi.findViewById(R.id.machine_text_dialog);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle(R.string.machine_title_alert_dialog);
+        builder.setView(vi);
+        builder.setIcon(R.drawable.ic_add_box_black_24dp);
+        builder.setPositiveButton(R.string.ok, (dialog, which) -> {
+            if (!machine.getText().toString().equals("")) {
+
+                mItems.add(new MachineItem(
+                        R.drawable.ic_menu_camera,
+                        machine.getText().toString(),
+                        R.string.status_title,
+                        R.string.running,
+                        R.string.begin_time_title,
+                        "12:00:00",
+                        R.string.completed_time_title,
+                        "13:30:00",
+                        R.string.food_type_title,
+                        R.string.orange,
+                        R.string.weigh_title,
+                        "300",
+                        R.string.current_temperature_title,
+                        "65",
+                        R.string.current_humidity_title,
+                        "72"));
+
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, (dialog, which) -> {
+
+        });
+        builder.create().show();
+    }
+
+    private void createItemList() {
+        mItems = new ArrayList<>();
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 01", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 02", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 03", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 04", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 05", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 06", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 07", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 08", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 09", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 10", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 11", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 12", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 13", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 14", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 15", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 16", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 17", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 18", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 19", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 20", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 21", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 22", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 23", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 24", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 25", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+    }
+
+    private void buildRecyclerView() {
         mRecyclerView = root.findViewById(R.id.recycle_list_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext());
@@ -123,17 +215,14 @@ public class MachineSystemFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-        mAdapter.setOnItemClickListener(position -> {
-            changeDestination(position);
-        });
+        mAdapter.setOnItemClickListener(this::changeDestination);
     }
 
-    void changeDestination(int position) {
+    private void changeDestination(int position) {
         NavController navController = Navigation.findNavController(mainActivity, R.id.nav_host_fragment);
         MachineSystemFragmentDirections.ActionNavMachineSystemToNavMachineInfo action = MachineSystemFragmentDirections.actionNavMachineSystemToNavMachineInfo();
         action.setImageResource(R.drawable.ic_menu_camera);
-        int number = position + 1;
-        action.setMachineTitle("Machine " + number);
+        action.setMachineTitle(mItems.get(position).getTitle());
         action.setMachineInfo("Machine Information");
         action.setBeginTimeTitle("Begin time:");
         action.setBeginTimeTextView("12:30:25");

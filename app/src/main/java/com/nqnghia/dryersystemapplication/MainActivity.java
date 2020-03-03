@@ -30,11 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private AppBarConfiguration mAppBarConfiguration;
     private volatile int k;
-    private OptionsItemSelectedListener itemSelectedListener;
-
-    public  interface OptionsItemSelectedListener {
-        void onOptionsItemSelectedHandler(MenuItem item);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,39 +57,30 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.nav_about:
                     navController.navigate(R.id.nav_about);
-                    getFab().hide();
                     break;
                 case R.id.nav_account:
                     navController.navigate(R.id.nav_account);
-                    getFab().hide();
                     break;
                 case R.id.nav_device_sensor:
                     navController.navigate(R.id.nav_device_sensor);
-                    getFab().show();
                     break;
                 case R.id.nav_machine_system:
                     navController.navigate(R.id.nav_machine_system);
-                    getFab().show();
                     break;
                 case R.id.nav_notifications:
                     navController.navigate(R.id.nav_notifications);
-                    getFab().show();
                     break;
                 case R.id.nav_recipes:
                     navController.navigate(R.id.nav_recipes);
-                    getFab().show();
                     break;
                 case R.id.nav_settings:
                     navController.navigate(R.id.nav_settings);
-                    getFab().hide();
                     break;
                 case R.id.nav_statistics:
                     navController.navigate(R.id.nav_statistics);
-                    getFab().hide();
                     break;
                 case R.id.nav_tasks:
                     navController.navigate(R.id.nav_tasks);
-                    getFab().show();
                     break;
                 case R.id.nav_logout:
                     closeApp();
@@ -117,6 +103,24 @@ public class MainActivity extends AppCompatActivity {
                 item.setChecked(currentDestination.getId() == item.getItemId());
             }
             drawer.closeDrawer(GravityCompat.START);
+
+            switch (destination.getId()) {
+                case R.id.nav_about:
+                case R.id.nav_account:
+                case R.id.nav_settings:
+                case R.id.nav_statistics:
+                    getFab().hide();
+                    break;
+                case R.id.nav_machine_system:
+                case R.id.nav_device_sensor:
+                case R.id.nav_notifications:
+                case R.id.nav_recipes:
+                case R.id.nav_tasks:
+                    getFab().show();
+                    break;
+                default:
+                    break;
+            }
         });
     }
 
@@ -157,15 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Log.e(TAG, "onOptionsItemSelected:");
-        if (itemSelectedListener != null) {
-            itemSelectedListener.onOptionsItemSelectedHandler(item);
-        }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void setItemSelectedListener(OptionsItemSelectedListener itemSelectedListener) {
-        this.itemSelectedListener = itemSelectedListener;
     }
 
     @Override

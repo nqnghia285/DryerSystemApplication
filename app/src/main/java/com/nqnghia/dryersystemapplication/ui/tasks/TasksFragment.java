@@ -3,6 +3,8 @@ package com.nqnghia.dryersystemapplication.ui.tasks;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,6 +22,14 @@ public class TasksFragment extends Fragment {
     private TasksViewModel tasksViewModel;
     private MainActivity mainActivity;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Call setHasOptionsMenu() to Fragment can setup menu
+        setHasOptionsMenu(true);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         tasksViewModel =
@@ -36,11 +46,28 @@ public class TasksFragment extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (mainActivity != null) {
+            mainActivity.getFab().setOnClickListener(v -> {
+                //TODO
+            });
+        }
+    }
+
+    @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof MainActivity) {
             mainActivity = (MainActivity) context;
 //            mainActivity.getFab().show();
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        //TODO
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

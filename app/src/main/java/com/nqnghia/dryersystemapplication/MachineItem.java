@@ -3,37 +3,37 @@ package com.nqnghia.dryersystemapplication;
 public class MachineItem {
     private int mImageResource;
     private String mTitle;
-    private String mStatusTitle;
-    private String mStatusTextView;
-    private String mBeginTimeTitle;
+    private int mStatusTitle;
+    private int mStatusTextView;
+    private int mBeginTimeTitle;
     private String mBeginTimeTextView;
-    private String mCompletedTimeTitle;
+    private int mCompletedTimeTitle;
     private String mCompletedTimeTextView;
-    private String mFoodTypeTitle;
-    private String mFoodTypeTextView;
-    private String mWeighTitle;
+    private int mFoodTypeTitle;
+    private int mFoodTypeTextView;
+    private int mWeighTitle;
     private String mWeighTextView;
-    private String mCurrentTemperatureTitle;
+    private int mCurrentTemperatureTitle;
     private String mCurrentTemperatureTextView;
-    private String mCurrentHumidityTitle;
+    private int mCurrentHumidityTitle;
     private String mCurrentHumidityTextView;
     private Boolean mSelected;
 
     public MachineItem(int imageResource,
                        String title,
-                       String statusTitle,
-                       String statusTextView,
-                       String beginTimeTitle,
+                       int statusTitle,
+                       int statusTextView,
+                       int beginTimeTitle,
                        String beginTimeTextView,
-                       String completedTimeTitle,
+                       int completedTimeTitle,
                        String completedTimeTextView,
-                       String foodTypeTitle,
-                       String foodTypeTextView,
-                       String weighTitle,
+                       int foodTypeTitle,
+                       int foodTypeTextView,
+                       int weighTitle,
                        String weighTextView,
-                       String currentTemperatureTitle,
+                       int currentTemperatureTitle,
                        String currentTemperatureTextView,
-                       String currentHumidityTitle,
+                       int currentHumidityTitle,
                        String currentHumidityTextView) {
         mImageResource = imageResource;
         mTitle = title;
@@ -54,28 +54,6 @@ public class MachineItem {
         mSelected = false;
     }
 
-    public MachineItem(int imageResource, String...args) {
-        if (args.length == 15) {
-            mImageResource = imageResource;
-            mTitle = args[0];
-            mStatusTitle = args[1];
-            mStatusTextView = args[2];
-            mBeginTimeTitle = args[3];
-            mBeginTimeTextView = args[4];
-            mCompletedTimeTitle = args[5];
-            mCompletedTimeTextView = args[6];
-            mFoodTypeTitle = args[7];
-            mFoodTypeTextView = args[8];
-            mWeighTitle = args[9];
-            mWeighTextView = args[10];
-            mCurrentTemperatureTitle = args[11];
-            mCurrentTemperatureTextView = args[12];
-            mCurrentHumidityTitle = args[13];
-            mCurrentHumidityTextView = args[14];
-            mSelected = false;
-        }
-    }
-
     public String getTitle() {
         return mTitle;
     }
@@ -92,7 +70,7 @@ public class MachineItem {
         return mBeginTimeTextView;
     }
 
-    public String getBeginTimeTitle() {
+    public int getBeginTimeTitle() {
         return mBeginTimeTitle;
     }
 
@@ -100,23 +78,23 @@ public class MachineItem {
         return mCompletedTimeTextView;
     }
 
-    public String getCompletedTimeTitle() {
+    public int getCompletedTimeTitle() {
         return mCompletedTimeTitle;
     }
 
-    public String getFoodTypeTextView() {
+    public int getFoodTypeTextView() {
         return mFoodTypeTextView;
     }
 
-    public String getStatusTextView() {
+    public int getStatusTextView() {
         return mStatusTextView;
     }
 
-    public String getStatusTitle() {
+    public int getStatusTitle() {
         return mStatusTitle;
     }
 
-    public String getFoodTypeTitle() {
+    public int getFoodTypeTitle() {
         return mFoodTypeTitle;
     }
 
@@ -124,11 +102,11 @@ public class MachineItem {
         return mCurrentHumidityTextView;
     }
 
-    public String getCurrentHumidityTitle() {
+    public int getCurrentHumidityTitle() {
         return mCurrentHumidityTitle;
     }
 
-    public String getWeighTitle() {
+    public int getWeighTitle() {
         return mWeighTitle;
     }
 
@@ -136,7 +114,7 @@ public class MachineItem {
         return mWeighTextView;
     }
 
-    public String getCurrentTemperatureTitle() {
+    public int getCurrentTemperatureTitle() {
         return mCurrentTemperatureTitle;
     }
 
@@ -156,7 +134,7 @@ public class MachineItem {
         mBeginTimeTextView = beginTimeTextView;
     }
 
-    public void setBeginTimeTitle(String beginTimeTitle) {
+    public void setBeginTimeTitle(int beginTimeTitle) {
         mBeginTimeTitle = beginTimeTitle;
     }
 
@@ -164,19 +142,19 @@ public class MachineItem {
         mCompletedTimeTextView = completedTimeTextView;
     }
 
-    public void setCompletedTimeTitle(String completedTimeTitle) {
+    public void setCompletedTimeTitle(int completedTimeTitle) {
        mCompletedTimeTitle = completedTimeTitle;
     }
 
-    public void setFoodTypeTextView(String foodTypeTextView) {
+    public void setFoodTypeTextView(int foodTypeTextView) {
         mFoodTypeTextView = foodTypeTextView;
     }
 
-    public void setFoodTypeTitle(String foodTypeTitle) {
+    public void setFoodTypeTitle(int foodTypeTitle) {
         mFoodTypeTitle = foodTypeTitle;
     }
 
-    public void setCurrentTemperatureTitle(String currentTemperatureTitle) {
+    public void setCurrentTemperatureTitle(int currentTemperatureTitle) {
         mCurrentTemperatureTitle = currentTemperatureTitle;
     }
 
@@ -184,7 +162,7 @@ public class MachineItem {
         mCurrentHumidityTextView = currentHumidityTextView;
     }
 
-    public void setCurrentHumidityTitle(String currentHumidityTitle) {
+    public void setCurrentHumidityTitle(int currentHumidityTitle) {
         mCurrentHumidityTitle = currentHumidityTitle;
     }
 
@@ -192,15 +170,15 @@ public class MachineItem {
         mImageResource = imageResource;
     }
 
-    public void setStatusTextView(String statusTextView) {
+    public void setStatusTextView(int statusTextView) {
         mStatusTextView = statusTextView;
     }
 
-    public void setStatusTitle(String statusTitle) {
+    public void setStatusTitle(int statusTitle) {
         mStatusTitle = statusTitle;
     }
 
-    public void setWeighTitle(String weighTitle) {
+    public void setWeighTitle(int weighTitle) {
         mWeighTitle = weighTitle;
     }
 

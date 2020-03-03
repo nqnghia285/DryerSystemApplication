@@ -71,7 +71,7 @@
                                 android:id="@+id/machine_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Máy số 01"
+                                android:text="@string/machine_title"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/Purple"
@@ -81,10 +81,10 @@
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/machine_infomation"
+                            android:id="@+id/machine_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Thông tin thiết lập:"
+                            android:text="@string/machine_info"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
                             android:textSize="18sp"/>
@@ -100,7 +100,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_centerVertical="true"
-                                android:text="Thời gian bắt đầu:"
+                                android:text="@string/begin_time_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -130,7 +130,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_centerVertical="true"
-                                android:text="Thời gian kết thúc:"
+                                android:text="@string/completed_time_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -160,7 +160,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_centerVertical="true"
-                                android:text="Nhiệt độ:"
+                                android:text="@string/temperature_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -180,7 +180,7 @@
                             <katex.hourglass.in.mathlib.MathView
                                 android:id="@+id/celsius"
                                 android:layout_width="40dp"
-                                android:layout_height="25dp"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginEnd="10dp"
                                 app:setText="$\\degree C$"
@@ -198,7 +198,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:text="Độ ẩm:"
+                                android:text="@string/humidity_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -219,7 +219,7 @@
                             <katex.hourglass.in.mathlib.MathView
                                 android:id="@+id/humidity"
                                 android:layout_width="40dp"
-                                android:layout_height="25dp"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 app:setText="$\\%$"
                                 app:setTextColor="@color/Blue"
@@ -239,7 +239,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_centerVertical="true"
-                                android:text="Loại nguyên liệu:"
+                                android:text="@string/food_type_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -269,7 +269,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:text="Khối lượng:"
+                                android:text="@string/weigh_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -290,7 +290,7 @@
                             <katex.hourglass.in.mathlib.MathView
                                 android:id="@+id/weigh"
                                 android:layout_width="40dp"
-                                android:layout_height="25dp"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 app:setText="$Kg$"
                                 app:setTextColor="@color/Blue"
@@ -305,7 +305,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            android:text="Nhiệt độ và độ ẩm hiện tại:"
+                            android:text="@string/current_temperature_humidity_title"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
                             android:textSize="18sp"/>
@@ -334,7 +334,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:text="Nhiệt độ:"
+                                android:text="@string/temperature_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -355,7 +355,7 @@
                             <katex.hourglass.in.mathlib.MathView
                                 android:id="@+id/current_celsius"
                                 android:layout_width="40dp"
-                                android:layout_height="25dp"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginEnd="10dp"
                                 app:setText="$\\degree C$"
@@ -373,7 +373,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
-                                android:text="Độ ẩm:"
+                                android:text="@string/humidity_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -394,7 +394,7 @@
                             <katex.hourglass.in.mathlib.MathView
                                 android:id="@+id/current_humidity"
                                 android:layout_width="40dp"
-                                android:layout_height="25dp"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 app:setText="$\\%$"
                                 app:setTextColor="@color/Blue"
@@ -407,7 +407,7 @@
                             android:id="@+id/status_fan_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Trạng thái quạt:"
+                            android:text="@string/status_fan_title"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
                             android:textSize="18sp"/>
@@ -423,7 +423,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_centerVertical="true"
-                                android:text="Quạt thổi:"
+                                android:text="@string/blower_fan_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -434,7 +434,7 @@
                                 android:layout_height="50dp"
                                 android:layout_toStartOf="@+id/blower_fan_switch"
                                 android:layout_marginEnd="3dp"
-                                android:text="Tắt"
+                                android:text="@string/off"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
@@ -455,7 +455,7 @@
                                 android:layout_height="50dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginEnd="10dp"
-                                android:text="Mở"
+                                android:text="@string/on"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
@@ -474,7 +474,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_centerVertical="true"
-                                android:text="Quạt hút:"
+                                android:text="@string/exhaust_fan_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -485,7 +485,7 @@
                                 android:layout_height="50dp"
                                 android:layout_toStartOf="@+id/exhaust_fan_switch"
                                 android:layout_marginEnd="3dp"
-                                android:text="Tắt"
+                                android:text="@string/off"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
@@ -506,7 +506,7 @@
                                 android:layout_height="50dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginEnd="10dp"
-                                android:text="Mở"
+                                android:text="@string/on"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
