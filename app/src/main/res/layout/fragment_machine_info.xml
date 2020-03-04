@@ -9,8 +9,7 @@
         android:id="@+id/circle1"
         android:layout_width="134dp"
         android:layout_height="134dp"
-        android:layout_below="@+id/bgHeader"
-        android:layout_marginLeft="-25dp"
+        android:layout_marginStart="-25dp"
         android:layout_marginTop="-5dp"
         android:src="@drawable/circletransparant" />
 
@@ -18,9 +17,9 @@
         android:id="@+id/circle3"
         android:layout_width="182dp"
         android:layout_height="182dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="-80dp"
+        android:layout_marginStart="-80dp"
         android:layout_marginBottom="-30dp"
         android:src="@drawable/circle" />
 
@@ -28,7 +27,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/bgHeader"
         android:layout_margin="10dp">
 
         <LinearLayout
@@ -39,7 +37,8 @@
             <RelativeLayout
                 android:id="@+id/rlayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv"
@@ -57,7 +56,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:id="@+id/machine_image"
@@ -65,7 +65,7 @@
                                 android:layout_height="50dp"
                                 android:src="@drawable/ic_action_machine"
                                 android:layout_margin="10dp"
-                                android:focusableInTouchMode="true"/>
+                                android:contentDescription="@string/machine_title" />
 
                             <TextView
                                 android:id="@+id/machine_title"
@@ -133,7 +133,8 @@
                                 android:text="@string/completed_time_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/completed_time_text_view"
@@ -163,7 +164,8 @@
                                 android:text="@string/temperature_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/temperature_text_view"
@@ -201,7 +203,8 @@
                                 android:text="@string/humidity_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/humidity_text_view"
@@ -242,7 +245,8 @@
                                 android:text="@string/food_type_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/food_type_text_view"
@@ -272,7 +276,8 @@
                                 android:text="@string/weigh_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/weigh_text_view"
@@ -303,8 +308,6 @@
                             android:id="@+id/current_temperature_humidity_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
                             android:text="@string/current_temperature_humidity_title"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
@@ -337,7 +340,8 @@
                                 android:text="@string/temperature_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/current_temperature_text_view"
@@ -376,7 +380,8 @@
                                 android:text="@string/humidity_title"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <TextView
                                 android:id="@+id/current_humidity_text_view"
@@ -489,7 +494,8 @@
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold"
+                                tools:ignore="RelativeOverlap" />
 
                             <Switch
                                 android:id="@+id/exhaust_fan_switch"

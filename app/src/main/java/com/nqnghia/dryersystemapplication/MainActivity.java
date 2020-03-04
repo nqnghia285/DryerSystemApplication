@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch (destination.getId()) {
                 case R.id.nav_about:
+                case R.id.nav_machine_info:
                 case R.id.nav_account:
                 case R.id.nav_settings:
                 case R.id.nav_statistics:

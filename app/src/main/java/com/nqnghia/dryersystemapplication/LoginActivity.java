@@ -69,15 +69,14 @@ public class LoginActivity extends AppCompatActivity implements ServiceConnectio
 
     private LocalService.LocalBinder mLocalBinder;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         // Tao service va lien ket voi class hien tai
-        bindService(new Intent(this, LocalService.class),
-                this,
-                Context.BIND_AUTO_CREATE);
+        bindService(new Intent(this, LocalService.class), this, Context.BIND_AUTO_CREATE);
 
         username = findViewById(R.id.username_edit_text);
         password = findViewById(R.id.password_edit_text);
@@ -87,29 +86,24 @@ public class LoginActivity extends AppCompatActivity implements ServiceConnectio
         login.setOnClickListener(v -> startMainActivity());
 
         fingerprint = findViewById(R.id.fingerprint_image_view);
-        fingerprint.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View v) {
+        fingerprint.setOnClickListener(v -> {
 
-                if (!keyguardManager.isKeyguardSecure()){
-                    showToast("Hãy thêm mật khẩu khóa điện thoại trong cài đặt");
-                } else if (!fingerprintManager.hasEnrolledFingerprints()){
-                    showToast("Hãy thêm ít nhất một dấu vân tay vào điện thoại để sử dụng tính năng này");
-                } else {
+            if (!keyguardManager.isKeyguardSecure()){
+                showToast("Hãy thêm mật khẩu khóa điện thoại trong cài đặt");
+            } else if (!fingerprintManager.hasEnrolledFingerprints()){
+                showToast("Hãy thêm ít nhất một dấu vân tay vào điện thoại để sử dụng tính năng này");
+            } else {
+                FingerprintManager.CryptoObject cryptoObject = new FingerprintManager.CryptoObject(cipher);
+                FingerprintHandler fingerprintHandler = new FingerprintHandler(v.getContext());
+                fingerprintHandler.startAuth(fingerprintManager, cryptoObject);
+                fingerprintHandler.addHandler(result -> startMainActivity());
 
-                    showToast("Kiểm tra dấu vân tay");
-
-                    PopupFingerprintActivity fingerprintActivity = new PopupFingerprintActivity();
-                    fingerprintActivity.setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogTheme);
-                    fingerprintActivity.show(getSupportFragmentManager(), "popupFingerprint");
-
-                    FingerprintManager.CryptoObject cryptoObject = new FingerprintManager.CryptoObject(cipher);
-                    FingerprintHandler fingerprintHandler = new FingerprintHandler(v.getContext());
-                    fingerprintHandler.startAuth(fingerprintManager, cryptoObject);
-                    fingerprintHandler.addHandler(result -> startMainActivity());
-                }
+                PopupFingerprintActivity fingerprintActivity = new PopupFingerprintActivity();
+                fingerprintActivity.setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogTheme);
+                fingerprintActivity.setOnCancelClickListener(v1 -> {
+                    fingerprintHandler.stopAuth();
+                });
+                fingerprintActivity.show(getSupportFragmentManager(), "popupFingerprint");
             }
         });
 
@@ -129,7 +123,6 @@ public class LoginActivity extends AppCompatActivity implements ServiceConnectio
 
     private void startMainActivity() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

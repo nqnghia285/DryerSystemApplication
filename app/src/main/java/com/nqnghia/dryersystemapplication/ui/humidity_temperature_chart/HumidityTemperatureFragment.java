@@ -153,7 +153,16 @@ public class HumidityTemperatureFragment extends Fragment {
         super.onAttach(context);
         if (context instanceof MainActivity) {
             mainActivity = (MainActivity) context;
-//            mainActivity.getFab().hide();
+        }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (mainActivity != null) {
+            mainActivity.getFab().setOnClickListener(v -> {
+                //TODO
+            });
         }
     }
 

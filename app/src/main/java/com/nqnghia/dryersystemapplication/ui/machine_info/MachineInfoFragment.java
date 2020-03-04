@@ -90,11 +90,9 @@ public class MachineInfoFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        machineInfoViewModel =
-                ViewModelProviders.of(this).get(MachineInfoViewModel.class);
+        machineInfoViewModel = ViewModelProviders.of(this).get(MachineInfoViewModel.class);
         root = inflater.inflate(R.layout.fragment_machine_info, container, false);
 
         imageView = root.findViewById(R.id.machine_image);
