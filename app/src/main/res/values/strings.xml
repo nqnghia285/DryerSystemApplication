@@ -13,6 +13,7 @@
     <string name="action_uncheck_all">Hủy chọn tất cả</string>
     <string name="action_remove">Xóa</string>
     <string name="action_add_item">Thêm máy sấy</string>
+    <string name="action_edit_item">Chỉnh sửa</string>
 
     <!-- Menu navigation drawer -->
     <string name="menu_machine_system">Hệ thống máy sấy</string>
@@ -50,6 +51,8 @@
     <string name="off">Tắt</string>
     <string name="on">Mở</string>
     <string name="machine_title_alert_dialog">Thêm máy sấy</string>
+    <string name="machine_title_alert_dialog_2">Chỉnh tên máy sấy</string>
+    <string name="recipe_title_alert_dialog">Thêm công thức sấy</string>
     <string name="ok">OK</string>
     <string name="no">NO</string>
     <string name="cancel">CANCEL</string>
@@ -57,6 +60,8 @@
     <string name="chile">Ớt</string>
     <string name="lemon">Chanh</string>
     <string name="orange">Cam</string>
+    <string name="recipe_title">Tiêu đề công thức:</string>
+    <string name="drying_time_title">Thời gian sấy:</string>
 
     <!--oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
 

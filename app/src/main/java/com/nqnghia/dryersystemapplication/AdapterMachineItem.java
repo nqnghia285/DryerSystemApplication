@@ -21,7 +21,7 @@ public class AdapterMachineItem extends RecyclerView.Adapter<AdapterMachineItem.
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(View view, int position);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -64,15 +64,6 @@ public class AdapterMachineItem extends RecyclerView.Adapter<AdapterMachineItem.
             mCurrentTemperatureTextView = itemView.findViewById(R.id.current_temperature_text_view);
             mCurrentHumidityTitle = itemView.findViewById(R.id.current_humidity_title);
             mCurrentHumidityTextView = itemView.findViewById(R.id.current_humidity_text_view);
-
-            mImageResource.setOnClickListener((v) -> {
-                if (listener != null) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION) {
-                        listener.onItemClick(position);
-                    }
-                }
-            });
         }
     }
 
@@ -107,6 +98,14 @@ public class AdapterMachineItem extends RecyclerView.Adapter<AdapterMachineItem.
         holder.mCurrentTemperatureTextView.setText(currentItem.getCurrentTemperatureTextView());
         holder.mCurrentHumidityTitle.setText(currentItem.getCurrentHumidityTitle());
         holder.mCurrentHumidityTextView.setText(currentItem.getCurrentHumidityTextView());
+
+        holder.mImageResource.setOnClickListener((v) -> {
+            Log.e(TAG, "Click on buttonImageView " + position);
+            if (mListener != null) {
+                mListener.onItemClick(v, position);
+            }
+        });
+
         if (currentItem.getSelected()) {
             holder.itemView.setBackgroundResource(R.drawable.item_blue_purple_background);
         } else {
@@ -114,6 +113,11 @@ public class AdapterMachineItem extends RecyclerView.Adapter<AdapterMachineItem.
         }
 
         holder.itemView.setOnClickListener(v -> {
+            Log.e(TAG, "Click on itemView " + position);
+            if (mListener != null) {
+                mListener.onItemClick(v, position);
+            }
+
             if (currentItem.getSelected()) {
                 currentItem.setSelected(false);
                 holder.itemView.setBackgroundResource(R.drawable.item_white_background);
@@ -126,6 +130,10 @@ public class AdapterMachineItem extends RecyclerView.Adapter<AdapterMachineItem.
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        if (mItems != null) {
+            return mItems.size();
+        } else {
+            return 0;
+        }
     }
 }

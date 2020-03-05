@@ -1,5 +1,6 @@
 package com.nqnghia.dryersystemapplication.ui.machine_system;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -37,6 +38,7 @@ import com.nqnghia.dryersystemapplication.AdapterMachineItem;
 import com.nqnghia.dryersystemapplication.MachineItem;
 import com.nqnghia.dryersystemapplication.MainActivity;
 import com.nqnghia.dryersystemapplication.R;
+import com.nqnghia.dryersystemapplication.RecipeItem;
 import com.nqnghia.dryersystemapplication.ui.machine_info.MachineInfoFragment;
 
 import java.util.ArrayList;
@@ -52,6 +54,7 @@ public class MachineSystemFragment extends Fragment {
     private AdapterMachineItem mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MachineItem> mItems;
+    private volatile int mPosition = 0;
 
     @Override
     public void onAttach(Context context) {
@@ -98,7 +101,7 @@ public class MachineSystemFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         menu.clear();
-        inflater.inflate(R.menu.machine_system_menu, menu);
+        inflater.inflate(R.menu.main, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -106,30 +109,19 @@ public class MachineSystemFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_select_all:
-                for (MachineItem machineItem : mItems) {
-                    machineItem.setSelected(true);
-                }
-                mAdapter.notifyDataSetChanged();
+                selectAll();
                 break;
             case R.id.action_uncheck_all:
-                for (MachineItem machineItem : mItems) {
-                    machineItem.setSelected(false);
-                }
-                mAdapter.notifyDataSetChanged();
+                uncheckAll();
                 break;
             case R.id.action_remove:
-                int position = 0;
-                while (position < mItems.size()) {
-                    if (mItems.get(position).getSelected()) {
-                        mItems.remove(position);
-                    } else {
-                        position++;
-                    }
-                }
-                mAdapter.notifyDataSetChanged();
+                remove();
                 break;
             case R.id.action_add_item:
                 showMachineItemDialog();
+                break;
+            case R.id.action_edit_item:
+                editMachineItemDialog();
                 break;
             default:
                 break;
@@ -139,7 +131,7 @@ public class MachineSystemFragment extends Fragment {
 
     private void showMachineItemDialog() {
         LayoutInflater inflater = LayoutInflater.from(mainActivity);
-        View vi = inflater.inflate(R.layout.machine_item_dialog, null);
+        @SuppressLint("InflateParams") View vi = inflater.inflate(R.layout.machine_item_dialog, null);
 
         EditText machine = vi.findViewById(R.id.machine_text_dialog);
 
@@ -175,6 +167,67 @@ public class MachineSystemFragment extends Fragment {
 
         });
         builder.create().show();
+    }
+
+    private void editMachineItemDialog() {
+        int counter = 0;
+        for (MachineItem machineItem : mItems) {
+            if (machineItem.getSelected()) {
+                counter++;
+            }
+        }
+
+        if (counter != 0) {
+            if (counter > 1) {
+                uncheckAll();
+            } else {
+                LayoutInflater inflater = LayoutInflater.from(mainActivity);
+                @SuppressLint("InflateParams") View vi = inflater.inflate(R.layout.machine_item_dialog, null);
+
+                EditText machine = vi.findViewById(R.id.machine_text_dialog);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle(R.string.machine_title_alert_dialog_2);
+                builder.setView(vi);
+                builder.setIcon(R.drawable.ic_add_box_black_24dp);
+                builder.setPositiveButton(R.string.ok, (dialog, which) -> {
+                    if (!machine.getText().toString().equals("")) {
+                        mItems.get(mPosition).setTitle(machine.getText().toString());
+                        mAdapter.notifyDataSetChanged();
+                    }
+                });
+                builder.setNegativeButton(R.string.cancel, (dialog, which) -> {
+
+                });
+                builder.create().show();
+            }
+        }
+    }
+
+    private void selectAll() {
+        for (MachineItem machineItem : mItems) {
+            machineItem.setSelected(true);
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    private void uncheckAll() {
+        for (MachineItem machineItem : mItems) {
+            machineItem.setSelected(false);
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    private void remove() {
+        int position = 0;
+        while (position < mItems.size()) {
+            if (mItems.get(position).getSelected()) {
+                mItems.remove(position);
+            } else {
+                position++;
+            }
+        }
+        mAdapter.notifyDataSetChanged();
     }
 
     private void createItemList() {
@@ -215,7 +268,15 @@ public class MachineSystemFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-        mAdapter.setOnItemClickListener(this::changeDestination);
+        mAdapter.setOnItemClickListener((view, position) -> {
+            if (view.getId() == R.id.image_card_view) {
+                Log.e(TAG, "changeDestination(" + position + ")");
+                changeDestination(position);
+            } else if (view.getId() == R.id.machine_card_view) {
+                Log.e(TAG, "set position: " + position);
+                mPosition = position;
+            }
+        });
     }
 
     private void changeDestination(int position) {

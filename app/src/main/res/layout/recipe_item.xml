@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipe_title"
+            android:text="@string/recipe_title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_primary_variant"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/food_type_title_recipe"
+            android:text="@string/food_type_title"
+            android:textSize="16sp"
+            android:textColor="@color/Black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/food_type_text_view_recipe"
+            android:text="@string/orange"
+            android:textSize="16sp"
+            android:textColor="@color/Blue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="35dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weigh_title_recipe"
+            android:text="@string/weigh_title"
+            android:textSize="16sp"
+            android:textColor="@color/Black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="65dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weigh_text_view_recipe"
+            android:text="100"
+            android:textSize="16sp"
+            android:textColor="@color/Blue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="55dp"
+            android:layout_marginTop="65dp"/>
+
+        <katex.hourglass.in.mathlib.MathView
+            android:id="@+id/kg"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="65dp"
+            app:setText="$Kg$"
+            app:setTextColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/temperature_title_recipe"
+            android:text="@string/temperature_title"
+            android:textSize="16sp"
+            android:textColor="@color/Black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="95dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/temperature_text_view_recipe"
+            android:text="65"
+            android:textSize="16sp"
+            android:textColor="@color/Blue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="55dp"
+            android:layout_marginTop="95dp"/>
+
+        <katex.hourglass.in.mathlib.MathView
+            android:id="@+id/temp"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="95dp"
+            app:setText="$\\degree C$"
+            app:setTextColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/humidity_title_recipe"
+            android:text="@string/humidity_title"
+            android:textSize="16sp"
+            android:textColor="@color/Black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="125dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/humidity_text_view_recipe"
+            android:text="65"
+            android:textSize="16sp"
+            android:textColor="@color/Blue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="55dp"
+            android:layout_marginTop="125dp"/>
+
+        <katex.hourglass.in.mathlib.MathView
+            android:id="@+id/hum"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="125dp"
+            app:setText="$\\%$"
+            app:setTextColor="@color/Blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/drying_time_title_recipe"
+            android:text="@string/drying_time_title"
+            android:textSize="16sp"
+            android:textColor="@color/Black"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/drying_time_text_view_recipe"
+            android:text="01:00:00"
+            android:textSize="16sp"
+            android:textColor="@color/Blue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="155dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

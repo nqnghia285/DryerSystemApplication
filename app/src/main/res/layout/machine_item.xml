@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="4dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    android:id="@+id/machine_card_view">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -163,7 +164,7 @@
 
         <katex.hourglass.in.mathlib.MathView
             android:id="@+id/kg"
-            android:layout_width="45dp"
+            android:layout_width="32dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
@@ -199,10 +200,10 @@
 
         <katex.hourglass.in.mathlib.MathView
             android:id="@+id/temp"
-            android:layout_width="45dp"
+            android:layout_width="35dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="4dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="205dp"
             app:setText="$\\degree C$"
@@ -225,7 +226,7 @@
             android:id="@+id/current_humidity_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/temp"
+            android:layout_toStartOf="@+id/hum"
             android:layout_alignParentTop="true"
             android:layout_marginTop="235dp"
             android:text="65"
@@ -235,14 +236,14 @@
 
         <katex.hourglass.in.mathlib.MathView
             android:id="@+id/hum"
-            android:layout_width="45dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="235dp"
+            android:layout_marginEnd="8dp"
             app:setText="$\\%$"
-            app:setTextColor="@color/Blue"/>
+            app:setTextColor="@color/Blue" />
 
     </RelativeLayout>
 

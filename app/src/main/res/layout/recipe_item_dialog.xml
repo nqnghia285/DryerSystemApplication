@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    app:layout_constraintCircleRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipe_title_dialog"
+            android:text="@string/recipe_title"
+            android:textColor="@color/Blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/recipe_title_text_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bt_uifb"
+            android:ems="10"
+            android:padding="10dp"
+            android:textColor="@color/Purple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/food_type_title_dialog"
+            android:text="@string/food_type_title"
+            android:textColor="@color/Blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="98dp" />
+
+        <EditText
+            android:id="@+id/food_type_text_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Purple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:background="@drawable/bt_uifb"
+            android:padding="10dp"
+            android:layout_marginTop="130dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weigh_title_dialog"
+            android:text="@string/weigh_title"
+            android:textColor="@color/Blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="188dp"/>
+
+        <EditText
+            android:id="@+id/weigh_text_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Purple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:background="@drawable/bt_uifb"
+            android:padding="10dp"
+            android:layout_marginTop="220dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/temperature_title_dialog"
+            android:text="@string/temperature_title"
+            android:textColor="@color/Blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="278dp"/>
+
+        <EditText
+            android:id="@+id/temperature_text_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Purple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:background="@drawable/bt_uifb"
+            android:padding="10dp"
+            android:layout_marginTop="310dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/humidity_title_dialog"
+            android:text="@string/humidity_title"
+            android:textColor="@color/Blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="368dp"/>
+
+        <EditText
+            android:id="@+id/humidity_text_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bt_uifb"
+            android:ems="10"
+            android:padding="10dp"
+            android:textColor="@color/Purple"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/drying_time_title_dialog"
+            android:text="@string/drying_time_title"
+            android:textColor="@color/Blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="458dp"/>
+
+        <EditText
+            android:id="@+id/drying_time_text_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Purple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:ems="10"
+            android:background="@drawable/bt_uifb"
+            android:padding="10dp"
+            android:layout_marginTop="490dp"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
