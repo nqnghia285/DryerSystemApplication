@@ -281,36 +281,39 @@ public class MachineSystemFragment extends Fragment {
 
     private void changeDestination(int position) {
         NavController navController = Navigation.findNavController(mainActivity, R.id.nav_host_fragment);
-        MachineSystemFragmentDirections.ActionNavMachineSystemToNavMachineInfo action = MachineSystemFragmentDirections.actionNavMachineSystemToNavMachineInfo();
-        action.setImageResource(R.drawable.ic_menu_camera);
+        MachineSystemFragmentDirections.ActionNavMachineSystemToNavMachineInfo action =
+                MachineSystemFragmentDirections.actionNavMachineSystemToNavMachineInfo();
+        action.setPosition(position);
+        action.setImageResource(mItems.get(position).getImageResource());
         action.setMachineTitle(mItems.get(position).getTitle());
-        action.setMachineInfo("Machine Information");
-        action.setBeginTimeTitle("Begin time:");
+        action.setRecipeTitleList(getString(R.string.recipe_title_list));
+        action.setMachineInfo(getString(R.string.settings_info));
+        action.setBeginTimeTitle(getString(R.string.begin_time_title));
         action.setBeginTimeTextView("12:30:25");
-        action.setCompletedTimeTitle("Completed time:");
+        action.setCompletedTimeTitle(getString(R.string.completed_time_title));
         action.setCompletedTimeTextView("13:30:25");
-        action.setTemperatureTitle("Temperature:");
+        action.setTemperatureTitle(getString(R.string.temperature_title));
         action.setTemperatureTextView("70");
-        action.setHumidityTitle("Humidity:");
+        action.setHumidityTitle(getString(R.string.humidity_title));
         action.setHumidityTextView("80");
-        action.setFoodTypeTitle("Food type:");
+        action.setFoodTypeTitle(getString(R.string.food_type_title));
         action.setFoodTypeTextView("Chile");
-        action.setWeighTitle("Weigh:");
+        action.setWeighTitle(getString(R.string.weigh_title));
         action.setWeighTextView("300");
-        action.setCurrentTemperatureHumidityTitle("Current temperature and humidity:");
-        action.setCurrentTemperatureTitle("Current temperature:");
+        action.setCurrentTemperatureHumidityTitle(getString(R.string.current_temperature_humidity_title));
+        action.setCurrentTemperatureTitle(getString(R.string.temperature_title));
         action.setCurrentTemperatureTextView("65");
-        action.setCurrentHumidityTitle("Current humidity:");
+        action.setCurrentHumidityTitle(getString(R.string.humidity_title));
         action.setCurrentHumidityTextView("72");
-        action.setStatusFanTitle("Status fan:");
-        action.setBlowerFanTitle("Blower fan:");
-        action.setClosedBlowerFanTextView("OFF");
+        action.setStatusFanTitle(getString(R.string.status_fan_title));
+        action.setBlowerFanTitle(getString(R.string.blower_fan_title));
+        action.setClosedBlowerFanTextView(getString(R.string.off));
         action.setBlowerFanSwitch(true);
-        action.setOpenedBlowerFanTextView("ON");
-        action.setExhaustFanTitle("Exhaust fan:");
-        action.setClosedExhaustFanTextView("OFF");
+        action.setOpenedBlowerFanTextView(getString(R.string.on));
+        action.setExhaustFanTitle(getString(R.string.exhaust_fan_title));
+        action.setClosedExhaustFanTextView(getString(R.string.off));
         action.setExhaustFanSwitch(true);
-        action.setOpenedExhaustFanTextView("ON");
+        action.setOpenedExhaustFanTextView(getString(R.string.on));
 
         navController.navigate(action);
     }

@@ -8,7 +8,7 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <!-- Menu action -->
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Cài đặt</string>
     <string name="action_select_all">Chọn tất cả</string>
     <string name="action_uncheck_all">Hủy chọn tất cả</string>
     <string name="action_remove">Xóa</string>
@@ -34,6 +34,8 @@
     <!-- Text app -->
     <string name="machine_title">Tên máy</string>
     <string name="machine_title_2">Tên máy:</string>
+    <string name="recipe_title_list">Công thức sấy:</string>
+    <string name="settings_info">Thông tin thiết lập:</string>
     <string name="status_title">Trạng thái hoạt động:</string>
     <string name="begin_time_title">Thời gian bắt đầu:</string>
     <string name="completed_time_title">Thời gian kết thúc:</string>

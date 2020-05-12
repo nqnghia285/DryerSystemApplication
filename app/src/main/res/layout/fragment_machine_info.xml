@@ -27,7 +27,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,6 +78,33 @@
                                 android:layout_gravity="bottom"
                                 android:layout_marginBottom="10dp"
                                 android:layout_marginStart="-10dp"/>
+
+                        </LinearLayout>
+
+                        <!--                        -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/recipe_title_list"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/recipe_title_list"
+                                android:textColor="@color/design_default_color_primary_dark"
+                                android:textSize="18sp"
+                                android:textStyle="bold"/>
+
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/recipe_spinner"
+                                android:spinnerMode="dropdown"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_spinner"/>
 
                         </LinearLayout>
 
@@ -317,8 +344,8 @@
 
                             <ImageButton
                                 android:id="@+id/chart_image_button"
-                                android:layout_width="65dp"
-                                android:layout_height="65dp"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:src="@mipmap/ic_action_statistics" />

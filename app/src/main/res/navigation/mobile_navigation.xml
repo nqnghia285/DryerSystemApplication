@@ -12,133 +12,148 @@
         tools:layout="@layout/fragment_machine_system" >
         <action
             android:id="@+id/action_nav_machine_system_to_nav_machine_info"
-            app:destination="@id/nav_machine_info" />
+            app:destination="@id/nav_machine_info"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_machine_info"
         android:name="com.nqnghia.dryersystemapplication.ui.machine_info.MachineInfoFragment"
-        android:label="@string/fragment_machine_info"
-        tools:layout="@layout/fragment_machine_info">
+        android:label="@string/fragment_machine_info">
         <argument
             android:name="imageResource"
-            app:argType="integer"
-            android:defaultValue="0"/>
+            android:defaultValue="0"
+            app:argType="integer" />
         <argument
-            android:name="MachineTitle"
-            app:argType="string"
-            android:defaultValue="Máy số 01"/>
+            android:name="machineTitle"
+            android:defaultValue="Máy số 01"
+            app:argType="string" />
         <argument
             android:name="machineInfo"
-            app:argType="string"
-            android:defaultValue="Thông tin thiết lập:"/>
+            android:defaultValue="Thông tin thiết lập:"
+            app:argType="string" />
         <argument
             android:name="beginTimeTitle"
-            app:argType="string"
-            android:defaultValue="Thời gian bắt đầu:"/>
+            android:defaultValue="Thời gian bắt đầu:"
+            app:argType="string" />
         <argument
             android:name="beginTimeTextView"
-            app:argType="string"
-            android:defaultValue="12:00:00" />
+            android:defaultValue="12:00:00"
+            app:argType="string" />
         <argument
             android:name="completedTimeTitle"
-            app:argType="string"
-            android:defaultValue="Thời gian kết thúc:"/>
+            android:defaultValue="Thời gian kết thúc:"
+            app:argType="string" />
         <argument
             android:name="completedTimeTextView"
-            app:argType="string"
-            android:defaultValue="12:00:00" />
+            android:defaultValue="12:00:00"
+            app:argType="string" />
         <argument
             android:name="temperatureTitle"
-            app:argType="string"
-            android:defaultValue="Nhiệt độ:"/>
+            android:defaultValue="Nhiệt độ:"
+            app:argType="string" />
         <argument
             android:name="temperatureTextView"
-            app:argType="string"
-            android:defaultValue="65" />
+            android:defaultValue="65"
+            app:argType="string" />
         <argument
             android:name="humidityTitle"
-            app:argType="string"
-            android:defaultValue="Độ ẩm:"/>
+            android:defaultValue="Độ ẩm:"
+            app:argType="string" />
         <argument
             android:name="humidityTextView"
-            app:argType="string"
-            android:defaultValue="80" />
+            android:defaultValue="80"
+            app:argType="string" />
         <argument
             android:name="foodTypeTitle"
-            app:argType="string"
-            android:defaultValue="Loại nguyên liệu:"/>
+            android:defaultValue="Loại nguyên liệu:"
+            app:argType="string" />
         <argument
             android:name="foodTypeTextView"
-            app:argType="string"
-            android:defaultValue="Chile" />
+            android:defaultValue="Chile"
+            app:argType="string" />
         <argument
             android:name="weighTitle"
-            app:argType="string"
-            android:defaultValue="Khối lượng:"/>
+            android:defaultValue="Khối lượng:"
+            app:argType="string" />
         <argument
             android:name="weighTextView"
-            app:argType="string"
-            android:defaultValue="200" />
+            android:defaultValue="200"
+            app:argType="string" />
         <argument
             android:name="currentTemperatureHumidityTitle"
-            app:argType="string"
-            android:defaultValue="Nhiệt độ và độ ẩm hiện tại:"/>
+            android:defaultValue="Nhiệt độ và độ ẩm hiện tại:"
+            app:argType="string" />
         <argument
             android:name="currentTemperatureTitle"
-            app:argType="string"
-            android:defaultValue="Nhiệt độ:"/>
+            android:defaultValue="Nhiệt độ:"
+            app:argType="string" />
         <argument
             android:name="currentTemperatureTextView"
-            app:argType="string"
-            android:defaultValue="65" />
+            android:defaultValue="65"
+            app:argType="string" />
         <argument
             android:name="currentHumidityTitle"
-            app:argType="string"
-            android:defaultValue="Độ ẩm:"/>
+            android:defaultValue="Độ ẩm:"
+            app:argType="string" />
         <argument
             android:name="currentHumidityTextView"
-            app:argType="string"
-            android:defaultValue="75" />
+            android:defaultValue="75"
+            app:argType="string" />
         <argument
             android:name="statusFanTitle"
-            app:argType="string"
-            android:defaultValue="Trạng thái quạt:"/>
+            android:defaultValue="Trạng thái quạt:"
+            app:argType="string" />
         <argument
             android:name="blowerFanTitle"
-            app:argType="string"
-            android:defaultValue="Quạt thổi:"/>
+            android:defaultValue="Quạt thổi:"
+            app:argType="string" />
         <argument
             android:name="closedBlowerFanTextView"
-            app:argType="string"
-            android:defaultValue="Tắt"/>
+            android:defaultValue="Tắt"
+            app:argType="string" />
         <argument
             android:name="blowerFanSwitch"
-            app:argType="boolean"
-            android:defaultValue="false"/>
+            android:defaultValue="false"
+            app:argType="boolean" />
         <argument
             android:name="openedBlowerFanTextView"
-            app:argType="string"
-            android:defaultValue="Mở"/>
+            android:defaultValue="Mở"
+            app:argType="string" />
         <argument
             android:name="exhaustFanTitle"
-            app:argType="string"
-            android:defaultValue="Quạt hút:"/>
+            android:defaultValue="Quạt hút:"
+            app:argType="string" />
         <argument
             android:name="closedExhaustFanTextView"
-            app:argType="string"
-            android:defaultValue="Tắt"/>
+            android:defaultValue="Tắt"
+            app:argType="string" />
         <argument
             android:name="exhaustFanSwitch"
-            app:argType="boolean"
-            android:defaultValue="false"/>
+            android:defaultValue="false"
+            app:argType="boolean" />
         <argument
             android:name="openedExhaustFanTextView"
-            app:argType="string"
-            android:defaultValue="Mở"/>
+            android:defaultValue="Mở"
+            app:argType="string" />
         <action
             android:id="@+id/action_nav_machine_info_to_humidityTemperatureFragment"
-            app:destination="@id/humidityTemperatureFragment" />
+            app:destination="@id/humidityTemperatureFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="recipeTitleList"
+            app:argType="string"
+            android:defaultValue="Công thức sấy:" />
     </fragment>
 
     <fragment
@@ -191,6 +206,18 @@
     <fragment
         android:id="@+id/humidityTemperatureFragment"
         android:name="com.nqnghia.dryersystemapplication.ui.humidity_temperature_chart.HumidityTemperatureFragment"
-        android:label="HumidityTemperatureFragment" />
+        android:label="@string/fragment_humidity_temperature_chart" >
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <action
+        android:id="@+id/action_mobile_navigation_self"
+        app:destination="@id/mobile_navigation"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
 </navigation>

@@ -20,16 +20,23 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import com.google.android.material.snackbar.Snackbar;
 import com.nqnghia.dryersystemapplication.MainActivity;
 import com.nqnghia.dryersystemapplication.R;
 import com.nqnghia.dryersystemapplication.ui.humidity_temperature_chart.HumidityTemperatureFragment;
+import com.nqnghia.dryersystemapplication.ui.machine_system.MachineSystemFragmentDirections;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,12 +44,14 @@ import org.json.JSONObject;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class MachineInfoFragment extends Fragment {
+public class MachineInfoFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     private View root;
     private MachineInfoViewModel machineInfoViewModel;
 
     private ImageView imageView;
     private TextView machineTitle;
+    private TextView recipeTitleList;
+    private Spinner recipeSpinner;
     private TextView machineInfo;
     private TextView beginTimeTitle;
     private TextView beginTimeTextView;
@@ -57,6 +66,7 @@ public class MachineInfoFragment extends Fragment {
     private TextView weighTitle;
     private TextView weighTextView;
     private TextView currentTemperatureHumidityTitle;
+    private ImageButton chartImageButton;
     private TextView currentTemperatureTitle;
     private TextView currentTemperatureTextView;
     private TextView currentHumidityTitle;
@@ -97,6 +107,8 @@ public class MachineInfoFragment extends Fragment {
 
         imageView = root.findViewById(R.id.machine_image);
         machineTitle = root.findViewById(R.id.machine_title);
+        recipeTitleList = root.findViewById(R.id.recipe_title_list);
+        recipeSpinner = root.findViewById(R.id.recipe_spinner);
         machineInfo = root.findViewById(R.id.machine_info);
         beginTimeTitle = root.findViewById(R.id.begin_time_title);
         beginTimeTextView = root.findViewById(R.id.begin_time_text_view);
@@ -111,6 +123,7 @@ public class MachineInfoFragment extends Fragment {
         weighTitle = root.findViewById(R.id.weigh_title);
         weighTextView = root.findViewById(R.id.weigh_text_view);
         currentTemperatureHumidityTitle = root.findViewById(R.id.current_temperature_humidity_title);
+        chartImageButton = root.findViewById(R.id.chart_image_button);
         currentTemperatureTitle = root.findViewById(R.id.current_temperature_title);
         currentTemperatureTextView = root.findViewById(R.id.current_temperature_text_view);
         currentHumidityTitle = root.findViewById(R.id.current_humidity_title);
@@ -134,9 +147,9 @@ public class MachineInfoFragment extends Fragment {
 
         if (getArguments() != null) {
             MachineInfoFragmentArgs args = MachineInfoFragmentArgs.fromBundle(getArguments());
-
             imageView.setImageResource(args.getImageResource());
             machineTitle.setText(args.getMachineTitle());
+            recipeTitleList.setText(args.getRecipeTitleList());
             machineInfo.setText(args.getMachineInfo());
             beginTimeTitle.setText(args.getBeginTimeTitle());
             beginTimeTextView.setText(args.getBeginTimeTextView());
@@ -164,6 +177,18 @@ public class MachineInfoFragment extends Fragment {
             closedExhaustFanTextView.setText(args.getClosedExhaustFanTextView());
             exhaustFanSwitch.setChecked(args.getExhaustFanSwitch());
             openedExhaustFanTextView.setText(args.getOpenedExhaustFanTextView());
+
+            chartImageButton.setOnClickListener(v -> {
+                changeDestination(args.getPosition());
+            });
+
+            // DS option
+            String[] list = {"Củ cải trắng", "Nấm hương", "Xoài", "Khoai lan"};
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(mainActivity, R.layout.support_simple_spinner_dropdown_item, list);
+            adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+
+            recipeSpinner.setAdapter(adapter);
+            recipeSpinner.setOnItemSelectedListener(this);
         }
     }
 
@@ -172,5 +197,22 @@ public class MachineInfoFragment extends Fragment {
         menu.clear();
         //TODO
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void changeDestination(int position) {
+        NavController navController = Navigation.findNavController(mainActivity, R.id.nav_host_fragment);
+        MachineInfoFragmentDirections.ActionNavMachineInfoToHumidityTemperatureFragment action = MachineInfoFragmentDirections.actionNavMachineInfoToHumidityTemperatureFragment();
+        action.setPosition(position);
+        navController.navigate(action);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Snackbar.make(view, parent.getSelectedItem().toString(), 2000).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
