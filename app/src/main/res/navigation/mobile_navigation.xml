@@ -13,10 +13,10 @@
         <action
             android:id="@+id/action_nav_machine_system_to_nav_machine_info"
             app:destination="@id/nav_machine_info"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
     </fragment>
 
     <fragment
@@ -142,10 +142,10 @@
         <action
             android:id="@+id/action_nav_machine_info_to_humidityTemperatureFragment"
             app:destination="@id/humidityTemperatureFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/fragment_close_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
         <argument
             android:name="position"
             app:argType="integer"
@@ -215,9 +215,9 @@
     <action
         android:id="@+id/action_mobile_navigation_self"
         app:destination="@id/mobile_navigation"
-        app:enterAnim="@anim/nav_default_enter_anim"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        app:enterAnim="@anim/fragment_close_enter"
+        app:exitAnim="@anim/fragment_close_exit"
+        app:popEnterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit" />
 
 </navigation>

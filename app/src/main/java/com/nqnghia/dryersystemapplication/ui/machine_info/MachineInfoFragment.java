@@ -1,48 +1,36 @@
 package com.nqnghia.dryersystemapplication.ui.machine_info;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModelProviders;
 import android.content.Context;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.github.nkzawa.emitter.Emitter;
-import com.github.nkzawa.socketio.client.IO;
-import com.github.nkzawa.socketio.client.Socket;
 import com.google.android.material.snackbar.Snackbar;
 import com.nqnghia.dryersystemapplication.MainActivity;
 import com.nqnghia.dryersystemapplication.R;
-import com.nqnghia.dryersystemapplication.ui.humidity_temperature_chart.HumidityTemperatureFragment;
-import com.nqnghia.dryersystemapplication.ui.machine_system.MachineSystemFragmentDirections;
+import com.nqnghia.dryersystemapplication.RecipeAdapter;
+import com.nqnghia.dryersystemapplication.RecipeItem;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MachineInfoFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     private View root;
@@ -50,6 +38,7 @@ public class MachineInfoFragment extends Fragment implements AdapterView.OnItemS
 
     private ImageView imageView;
     private TextView machineTitle;
+    private Button runningButton;
     private TextView recipeTitleList;
     private Spinner recipeSpinner;
     private TextView machineInfo;
@@ -81,11 +70,14 @@ public class MachineInfoFragment extends Fragment implements AdapterView.OnItemS
     private Switch exhaustFanSwitch;
     private TextView openedExhaustFanTextView;
 
+    private List<RecipeItem> mItems;
 
     private MainActivity mainActivity;
 
+    private volatile int pos = 0;
+
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof MainActivity) {
             mainActivity = (MainActivity) context;
@@ -107,6 +99,7 @@ public class MachineInfoFragment extends Fragment implements AdapterView.OnItemS
 
         imageView = root.findViewById(R.id.machine_image);
         machineTitle = root.findViewById(R.id.machine_title);
+        runningButton = root.findViewById(R.id.running_button);
         recipeTitleList = root.findViewById(R.id.recipe_title_list);
         recipeSpinner = root.findViewById(R.id.recipe_spinner);
         machineInfo = root.findViewById(R.id.machine_info);
@@ -182,14 +175,60 @@ public class MachineInfoFragment extends Fragment implements AdapterView.OnItemS
                 changeDestination(args.getPosition());
             });
 
-            // DS option
-            String[] list = {"Củ cải trắng", "Nấm hương", "Xoài", "Khoai lan"};
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(mainActivity, R.layout.support_simple_spinner_dropdown_item, list);
-            adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+            runningButton.setOnClickListener(v -> {
+                RecipeItem item = mItems.get(pos);
+                beginTimeTextView.setText(item.getDryingTimeTextView());
+                completedTimeTextView.setText(item.getDryingTimeTextView());
+                temperatureTextView.setText(item.getTemperatureTextView());
+                humidityTextView.setText(item.getHumidityTextView());
+                foodTypeTextView.setText(item.getFoodTypeTextView());
+                weighTextView.setText(item.getWeighTextView());
+
+                RelativeLayout layout = root.findViewById(R.id.layout_parent);
+                Snackbar.make(layout, getString(R.string.running), Snackbar.LENGTH_LONG).show();
+            });
+
+            createItemList();
+
+            RecipeAdapter adapter = new RecipeAdapter(mainActivity, R.layout.selected_recipe_layout, mItems);
 
             recipeSpinner.setAdapter(adapter);
             recipeSpinner.setOnItemSelectedListener(this);
         }
+    }
+
+    private void createItemList() {
+        mItems = new ArrayList<>();
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Khoai lan", R.string.food_type_title, "Khoai lan", R.string.weigh_title, "500", R.string.temperature_title, "70", R.string.humidity_title, "80", R.string.drying_time_title, "03:40:00"));
+        mItems.add(new RecipeItem("Mít", R.string.food_type_title, "Mít tố nữ", R.string.weigh_title, "120", R.string.temperature_title, "65", R.string.humidity_title, "60", R.string.drying_time_title, "01:00:00"));
+        mItems.add(new RecipeItem("lúa", R.string.food_type_title, "lúa", R.string.weigh_title, "1000", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "07:00:00"));
+        mItems.add(new RecipeItem("Chuối", R.string.food_type_title, "Chuối lá xiêm", R.string.weigh_title, "200", R.string.temperature_title, "60", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Khoai lan", R.string.food_type_title, "Khoai lan", R.string.weigh_title, "500", R.string.temperature_title, "70", R.string.humidity_title, "80", R.string.drying_time_title, "03:40:00"));
+        mItems.add(new RecipeItem("Mít", R.string.food_type_title, "Mít tố nữ", R.string.weigh_title, "120", R.string.temperature_title, "65", R.string.humidity_title, "60", R.string.drying_time_title, "01:00:00"));
+        mItems.add(new RecipeItem("lúa", R.string.food_type_title, "lúa", R.string.weigh_title, "1000", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "07:00:00"));
+        mItems.add(new RecipeItem("Chuối", R.string.food_type_title, "Chuối lá xiêm", R.string.weigh_title, "200", R.string.temperature_title, "60", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Khoai lan", R.string.food_type_title, "Khoai lan", R.string.weigh_title, "500", R.string.temperature_title, "70", R.string.humidity_title, "80", R.string.drying_time_title, "03:40:00"));
+        mItems.add(new RecipeItem("Mít", R.string.food_type_title, "Mít tố nữ", R.string.weigh_title, "120", R.string.temperature_title, "65", R.string.humidity_title, "60", R.string.drying_time_title, "01:00:00"));
+        mItems.add(new RecipeItem("lúa", R.string.food_type_title, "lúa", R.string.weigh_title, "1000", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "07:00:00"));
+        mItems.add(new RecipeItem("Chuối", R.string.food_type_title, "Chuối lá xiêm", R.string.weigh_title, "200", R.string.temperature_title, "60", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Khoai lan", R.string.food_type_title, "Khoai lan", R.string.weigh_title, "500", R.string.temperature_title, "70", R.string.humidity_title, "80", R.string.drying_time_title, "03:40:00"));
+        mItems.add(new RecipeItem("Mít", R.string.food_type_title, "Mít tố nữ", R.string.weigh_title, "120", R.string.temperature_title, "65", R.string.humidity_title, "60", R.string.drying_time_title, "01:00:00"));
+        mItems.add(new RecipeItem("lúa", R.string.food_type_title, "lúa", R.string.weigh_title, "1000", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "07:00:00"));
+        mItems.add(new RecipeItem("Chuối", R.string.food_type_title, "Chuối lá xiêm", R.string.weigh_title, "200", R.string.temperature_title, "60", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Khoai lan", R.string.food_type_title, "Khoai lan", R.string.weigh_title, "500", R.string.temperature_title, "70", R.string.humidity_title, "80", R.string.drying_time_title, "03:40:00"));
+        mItems.add(new RecipeItem("Mít", R.string.food_type_title, "Mít tố nữ", R.string.weigh_title, "120", R.string.temperature_title, "65", R.string.humidity_title, "60", R.string.drying_time_title, "01:00:00"));
+        mItems.add(new RecipeItem("lúa", R.string.food_type_title, "lúa", R.string.weigh_title, "1000", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "07:00:00"));
+        mItems.add(new RecipeItem("Chuối", R.string.food_type_title, "Chuối lá xiêm", R.string.weigh_title, "200", R.string.temperature_title, "60", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Khoai lan", R.string.food_type_title, "Khoai lan", R.string.weigh_title, "500", R.string.temperature_title, "70", R.string.humidity_title, "80", R.string.drying_time_title, "03:40:00"));
+        mItems.add(new RecipeItem("Mít", R.string.food_type_title, "Mít tố nữ", R.string.weigh_title, "120", R.string.temperature_title, "65", R.string.humidity_title, "60", R.string.drying_time_title, "01:00:00"));
+        mItems.add(new RecipeItem("lúa", R.string.food_type_title, "lúa", R.string.weigh_title, "1000", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "07:00:00"));
+        mItems.add(new RecipeItem("Chuối", R.string.food_type_title, "Chuối lá xiêm", R.string.weigh_title, "200", R.string.temperature_title, "60", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
     }
 
     @Override
@@ -208,7 +247,11 @@ public class MachineInfoFragment extends Fragment implements AdapterView.OnItemS
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Snackbar.make(view, parent.getSelectedItem().toString(), 2000).show();
+        pos = position;
+        RecipeItem item = mItems.get(position);
+        //////////////////////////////////////////////////
+        RelativeLayout layout = root.findViewById(R.id.layout_parent);
+        Snackbar.make(layout, item.getRecipeTitle(), Snackbar.LENGTH_LONG).show();
     }
 
     @Override
