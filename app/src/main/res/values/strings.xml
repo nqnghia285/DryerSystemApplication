@@ -1,79 +1,147 @@
 <resources>
+<!--  String for Vi  -->
     <!-- Title -->
-    <string name="app_name">DryerSystemApplication</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Ngô Quân Như</string>
-    <string name="nav_header_subtitle">Quản lý hệ thống</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="app_name_vi">Dryer System Application</string>
+    <string name="navigation_drawer_open_vi">Open navigation drawer</string>
+    <string name="navigation_drawer_close_vi">Close navigation drawer</string>
+    <string name="nav_header_title_vi">Ngô Quân Như</string>
+    <string name="nav_header_subtitle_vi">Quản lý hệ thống</string>
+    <string name="nav_header_desc_vi">Navigation header</string>
 
     <!-- Menu action -->
-    <string name="action_settings">Cài đặt</string>
-    <string name="action_select_all">Chọn tất cả</string>
-    <string name="action_uncheck_all">Hủy chọn tất cả</string>
-    <string name="action_remove">Xóa</string>
-    <string name="action_add_item">Thêm máy sấy</string>
-    <string name="action_edit_item">Chỉnh sửa</string>
+    <string name="action_settings_vi">Cài đặt</string>
+    <string name="action_select_all_vi">Chọn tất cả</string>
+    <string name="action_uncheck_all_vi">Hủy chọn tất cả</string>
+    <string name="action_remove_vi">Xóa</string>
+    <string name="action_add_item_vi">Thêm máy sấy</string>
+    <string name="action_edit_item_vi">Chỉnh sửa</string>
 
     <!-- Menu navigation drawer -->
-    <string name="menu_machine_system">Hệ thống máy sấy</string>
-    <string name="fragment_machine_info">Thông tin máy sấy</string>
-    <string name="menu_status_devices_and_sensor">Trạng thái thiết bị và cảm biến</string>
-    <string name="menu_notifications">Thông báo</string>
-    <string name="menu_recipes">Công thức sấy</string>
-    <string name="menu_tasks">Công việc</string>
-    <string name="menu_statistical">Thống kê</string>
-    <string name="menu_account">Thông tin tài khoản</string>
-    <string name="menu_settings">Cài đặt</string>
-    <string name="menu_about">Giới thiệu ứng dụng</string>
-    <string name="menu_logout">Đăng xuất</string>
-    <string name="fragment_machine_list">Danh sách máy sấy</string>
-    <string name="fragment_humidity_temperature_chart">Biểu đồ nhiệt độ và độ ẩm</string>
-    <string name="login">Đăng nhập</string>
+    <string name="menu_machine_system_vi">Hệ thống máy sấy</string>
+    <string name="menu_machine_info_vi">Thông tin máy sấy</string>
+    <string name="menu_status_devices_and_sensor_vi">Trạng thái thiết bị và cảm biến</string>
+    <string name="menu_notifications_vi">Thông báo</string>
+    <string name="menu_recipes_vi">Công thức sấy</string>
+    <string name="menu_tasks_vi">Công việc</string>
+    <string name="menu_statistical_vi">Thống kê</string>
+    <string name="menu_account_vi">Thông tin tài khoản</string>
+    <string name="menu_settings_vi">Cài đặt</string>
+    <string name="menu_about_vi">Giới thiệu ứng dụng</string>
+    <string name="menu_logout_vi">Đăng xuất</string>
+    <string name="machine_list_vi">Danh sách máy sấy</string>
+    <string name="humidity_temperature_chart_vi">Biểu đồ nhiệt độ và độ ẩm</string>
+    <string name="login_vi">Đăng nhập</string>
 
     <!-- Text app -->
-    <string name="machine_title">Tên máy</string>
-    <string name="machine_title_2">Tên máy:</string>
-    <string name="recipe_title_list">Công thức sấy:</string>
-    <string name="settings_info">Thông tin thiết lập:</string>
-    <string name="status_title">Trạng thái hoạt động:</string>
-    <string name="begin_time_title">Thời gian bắt đầu:</string>
-    <string name="completed_time_title">Thời gian kết thúc:</string>
-    <string name="food_type_title">Loại nguyên liệu:</string>
-    <string name="weigh_title">Khối lượng:</string>
-    <string name="current_temperature_title">Nhiệt độ hiện tại:</string>
-    <string name="current_humidity_title">Độ ẩm hiện tại:</string>
-    <string name="machine_info">Thông tin thiết lập:</string>
-    <string name="temperature_title">Nhiệt độ:</string>
-    <string name="humidity_title">Độ ẩm:</string>
-    <string name="current_temperature_humidity_title">Nhiệt độ và độ ẩm hiện tại:</string>
-    <string name="status_fan_title">Trạng thái quạt:</string>
-    <string name="blower_fan_title">Quạt thổi:</string>
-    <string name="exhaust_fan_title">Quạt hút:</string>
-    <string name="off">Tắt</string>
-    <string name="on">Mở</string>
-    <string name="machine_title_alert_dialog">Thêm máy sấy</string>
-    <string name="machine_title_alert_dialog_2">Chỉnh tên máy sấy</string>
-    <string name="recipe_title_alert_dialog">Thêm công thức sấy</string>
-    <string name="ok">OK</string>
-    <string name="no">NO</string>
-    <string name="cancel">CANCEL</string>
-    <string name="yes">YES</string>
-    <string name="run">Chạy</string>
-    <string name="chile">Ớt</string>
-    <string name="lemon">Chanh</string>
-    <string name="orange">Cam</string>
-    <string name="recipe_title">Tiêu đề công thức:</string>
-    <string name="drying_time_title">Thời gian sấy:</string>
+    <string name="machine_title_vi">Tên máy</string>
+    <string name="machine_title_2_vi">Tên máy:</string>
+    <string name="recipe_title_list_vi">Công thức sấy:</string>
+    <string name="settings_info_vi">Thông tin thiết lập:</string>
+    <string name="status_title_vi">Trạng thái hoạt động:</string>
+    <string name="begin_time_title_vi">Thời gian bắt đầu:</string>
+    <string name="completed_time_title_vi">Thời gian kết thúc:</string>
+    <string name="food_type_title_vi">Loại nguyên liệu:</string>
+    <string name="weigh_title_vi">Khối lượng:</string>
+    <string name="current_temperature_title_vi">Nhiệt độ hiện tại:</string>
+    <string name="current_humidity_title_vi">Độ ẩm hiện tại:</string>
+    <string name="machine_info_vi">Thông tin thiết lập:</string>
+    <string name="temperature_title_vi">Nhiệt độ:</string>
+    <string name="humidity_title_vi">Độ ẩm:</string>
+    <string name="current_temperature_humidity_title_vi">Nhiệt độ và độ ẩm hiện tại:</string>
+    <string name="status_fan_title_vi">Trạng thái quạt:</string>
+    <string name="blower_fan_title_vi">Quạt thổi:</string>
+    <string name="exhaust_fan_title_vi">Quạt hút:</string>
+    <string name="off_vi">Tắt</string>
+    <string name="on_vi">Mở</string>
+    <string name="machine_title_alert_dialog_vi">Thêm máy sấy</string>
+    <string name="machine_title_alert_dialog_2_vi">Chỉnh tên máy sấy</string>
+    <string name="recipe_title_alert_dialog_vi">Thêm công thức sấy</string>
+    <string name="ok_vi">Đồng ý</string>
+    <string name="no_vi">Không</string>
+    <string name="cancel_vi">Hủy</string>
+    <string name="yes_vi">Đồng ý</string>
+    <string name="kg">Kg</string>
+    <string name="run_vi">Chạy</string>
+    <string name="chile_vi">Ớt</string>
+    <string name="lemon_vi">Chanh</string>
+    <string name="orange_vi">Cam</string>
+    <string name="recipe_title_vi">Tiêu đề công thức:</string>
+    <string name="drying_time_title_vi">Thời gian sấy:</string>
+    <string name="heating_machine_title_vi">Máy gia nhiệt:</string>
+    <string name="seek_bar_max">200W</string>
+    <string name="seek_bar_min">0W</string>
+    <string name="humidity_temperature_unit_vi">Nhiệt độ (°C) và độ ẩm (%)</string>
+    <string name="time_vi">Thời gian</string>
+    <string name="humidity_vi">Độ ẩm</string>
+    <string name="temperature_vi">Nhiệt độ</string>
+
+    <!--    -->
+    <string name="login_description_vi">Chào mừng bạn đến với ứng dụng!</string>
+    <string name="login_title_vi">Đăng nhập</string>
+    <string name="hint_account_vi">Tài khoản</string>
+    <string name="hint_password_vi">Mật khẩu</string>
+    <string name="forgot_password_vi">Quên mật khẩu?</string>
+    <string name="login_by_fingerprint_vi">Đăng nhập bằng vân tay</string>
+    <string name="enable_manual_vi">Bật chỉnh tay:</string>
+    <string name="check_fingerprint_vi">Kiểm tra dấu vân tay</string>
+    <string name="about_text_vi">Ứng dụng quản lý hệ thống máy sấy nguyên liệu</string>
+
+    <!--  Settings  -->
+    <string name="settings_vi">Settings</string>
+    <string name="lang_vi">lang_vi</string>
 
     <!--oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
 
-    <string name="running">Đang hoạt động</string>
-    <string name="stopped">Ngừng hoạt động</string>
+    <string name="running_vi">Đang hoạt động</string>
+    <string name="stopped_vi">Ngừng hoạt động</string>
+    <string name="application_vi">Ứng dụng</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="text_logout_notification">THÔNG BÁO</string>
-    <string name="text_logout_notification_content">Bạn muốn đăng xuất?</string>
+    <string name="text_logout_notification_vi">THÔNG BÁO</string>
+    <string name="text_logout_notification_content_vi">Bạn muốn đăng xuất?</string>
+
+<!--  String for En  -->
+
+
+<!--  Variable name  -->
+    <!--  Machine Information Fragment -->
+    <string name="image_resource">image_resource</string>
+    <string name="machine_title">machine_title</string>
+    <string name="enable_manual_label">enable_manual_label</string>
+    <string name="running_button">running_button</string>
+    <string name="recipe_title_list">recipe_title_list</string>
+    <string name="machine_info">machine_info</string>
+    <string name="begin_time_title">begin_time_title</string>
+    <string name="begin_time_text_view">begin_time_text_view</string>
+    <string name="completed_time_title">completed_time_title</string>
+    <string name="completed_time_text_view">completed_time_text_view</string>
+    <string name="temperature_title">temperature_title</string>
+    <string name="temperature_text_view">temperature_text_view</string>
+    <string name="humidity_title">humidity_title</string>
+    <string name="humidity_text_view">humidity_text_view</string>
+    <string name="food_type_title">food_type_title</string>
+    <string name="food_type_text_view">food_type_text_view</string>
+    <string name="weigh_title">weigh_title</string>
+    <string name="weigh_text_view">weigh_text_view</string>
+    <string name="current_temperature_humidity_title">current_temperature_humidity_title</string>
+    <string name="current_temperature_title">current_temperature_title</string>
+    <string name="current_temperature_text_view">current_temperature_text_view</string>
+    <string name="current_humidity_title">current_humidity_title</string>
+    <string name="current_humidity_text_view">current_humidity_text_view</string>
+    <string name="heating_machine_title">heating_machine_title</string>
+    <string name="value_of_progress">value_of_progress</string>
+    <string name="min">min</string>
+    <string name="max">max</string>
+    <string name="status_fan_title">status_fan_title</string>
+    <string name="blower_fan_title">blower_fan_title</string>
+    <string name="closed_blower_fan_title">closed_blower_fan_text_view</string>
+    <string name="blower_fan_switch">blower_fan_switch</string>
+    <string name="opened_blower_fan_title">opened_blower_fan_text_view</string>
+    <string name="exhaust_fan_title">exhaust_fan_title</string>
+    <string name="closed_exhaust_fan_title">closed_exhaust_fan_text_view</string>
+    <string name="exhaust_fan_switch">exhaust_fan_switch</string>
+    <string name="opened_exhaust_fan_title">opened_exhaust_fan_text_view</string>
+    <string name="heating_machine_seek_bar">heating_machine_seek_bar</string>
 </resources>

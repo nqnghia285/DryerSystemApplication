@@ -35,7 +35,7 @@ public class RecipeAdapter extends ArrayAdapter<RecipeItem> {
         View rowView = inflater.inflate(resId, null, true);
 
         TextView recipeTitleOption = rowView.findViewById(R.id.recipe_title_option);
-        recipeTitleOption.setText(item.getRecipeTitle());
+        recipeTitleOption.setText(item.getRecipeTitle() + ": " + item.getWeighTextView() + "Kg");
 
         return rowView;
     }
@@ -52,7 +52,7 @@ public class RecipeAdapter extends ArrayAdapter<RecipeItem> {
         RecipeItem item = getItem(position);
 
         TextView recipeTitleOption = row.findViewById(R.id.recipe_title_option);
-        recipeTitleOption.setText(item.getRecipeTitle());
+        recipeTitleOption.setText(item.getRecipeTitle() + ": " + item.getWeighTextView() + "Kg");
 
         return row;
     }

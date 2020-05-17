@@ -15,25 +15,25 @@
         android:elevation="5dp" />
 
     <TextView
-        android:id="@+id/tvDesc"
+        android:id="@+id/tv_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="40dp"
         android:elevation="5dp"
-        android:text="Chào mừng bạn đến với ứng dụng!"
+        android:text="@string/login_description_vi"
         android:textColor="@color/White"
         android:textSize="17sp"/>
 
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDesc"
+        android:layout_below="@+id/tv_desc"
         android:transitionName="tvLogin"
-        android:layout_alignLeft="@+id/tvDesc"
+        android:layout_alignLeft="@+id/tv_desc"
         android:elevation="5dp"
-        android:text="Đăng nhập"
+        android:text="@string/login_title_vi"
         android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -114,7 +114,7 @@
                         android:textColor="@color/Purple"
                         android:textStyle="bold"
                         android:textColorHint="@color/design_default_color_primary"
-                        android:hint="Tài khoản"
+                        android:hint="@string/hint_account_vi"
                         android:drawableLeft="@mipmap/ic_action_username"
                         android:background="@drawable/bt_uifb"
                         android:layout_marginTop="10dp"/>
@@ -137,7 +137,7 @@
                         android:textColor="@color/Purple"
                         android:textStyle="bold"
                         android:textColorHint="@color/design_default_color_primary"
-                        android:hint="Mật khẩu"
+                        android:hint="@string/hint_password_vi"
                         android:drawableLeft="@mipmap/ic_action_password"
                         android:background="@drawable/bt_uifb"/>
                 </LinearLayout>
@@ -159,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_ui"
-                    android:text="Đăng nhập"
+                    android:text="@string/login_title_vi"
                     android:textAllCaps="false"
                     android:textColor="@color/White" />
             </RelativeLayout>
@@ -172,7 +172,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:elevation="5dp"
-                android:text="Quên mật khẩu?"
+                android:text="@string/forgot_password_vi"
                 android:textSize="14sp"
                 android:textColor="@color/design_default_color_primary_dark"/>
 
@@ -186,12 +186,13 @@
                 android:layout_marginTop="50dp"/>
 
             <TextView
+                android:id="@+id/fingerprint_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_alignTop="@+id/fingerprint_image_view"
                 android:layout_marginTop="80dp"
-                android:text="Đăng nhập bằng vân tay"
+                android:text="@string/login_by_fingerprint_vi"
                 android:textColor="@color/design_default_color_primary_dark"
                 android:textStyle="bold"
                 android:textSize="14sp"/>

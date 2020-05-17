@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/text_logout_notification"
+        android:text="@string/text_logout_notification_vi"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="@android:color/holo_orange_dark"/>
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/text_logout_notification_content"
+        android:text="@string/text_logout_notification_content_vi"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="@android:color/white"/>

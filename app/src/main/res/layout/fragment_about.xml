@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Ứng dụng quản lý hệ thống máy sấy nguyên liệu"/>
+        android:text="@string/about_text_vi"/>
 
     <ImageView
         android:id="@+id/circle1"

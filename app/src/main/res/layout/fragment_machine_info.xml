@@ -6,29 +6,9 @@
     android:layout_height="match_parent"
     android:id="@+id/layout_parent">
 
-    <ImageView
-        android:id="@+id/circle1"
-        android:layout_width="134dp"
-        android:layout_height="134dp"
-        android:layout_marginStart="-25dp"
-        android:layout_marginTop="-5dp"
-        android:src="@drawable/circletransparant" />
-
-    <ImageView
-        android:id="@+id/circle3"
-        android:layout_width="182dp"
-        android:layout_height="182dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-80dp"
-        android:layout_marginBottom="-30dp"
-        android:src="@drawable/circle" />
-
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,9 +24,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="4dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -66,31 +44,64 @@
                                 android:src="@drawable/ic_action_machine"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:contentDescription="@string/machine_title"
+                                android:contentDescription="@string/machine_title_vi"
                                 android:layout_centerVertical="true"/>
 
                             <TextView
                                 android:id="@+id/machine_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/machine_title"
+                                android:text="@string/machine_title_vi"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/Purple"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="75dp"
-                                android:layout_alignParentTop="true"
-                                android:layout_marginTop="42dp"/>
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginTop="20dp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp">
+
+                                <TextView
+                                    android:id="@+id/enable_manual_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enable_manual_vi"
+                                    android:gravity="center"
+                                    android:textColor="@color/Blue"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"/>
+
+                                <Switch
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/enable_manual"
+                                    android:layout_marginStart="10dp"/>
+
+                            </LinearLayout>
 
                             <Button
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/run"
+                                android:layout_height="40dp"
+                                android:text="@string/run_vi"
                                 android:id="@+id/running_button"
                                 android:background="@drawable/button_background_v1"
                                 android:layout_alignParentEnd="true"
-                                android:layout_marginEnd="20dp"
-                                android:layout_centerVertical="true"/>
+                                android:layout_marginEnd="10dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp" />
 
                         </RelativeLayout>
 
@@ -99,16 +110,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/recipe_title_list"
-                                android:layout_marginStart="10dp"
-                                android:text="@string/recipe_title_list"
-                                android:textColor="@color/design_default_color_primary_dark"
-                                android:textSize="18sp"
-                                android:textStyle="bold"/>
 
                             <Spinner
                                 android:layout_width="match_parent"
@@ -125,7 +126,7 @@
                             android:id="@+id/machine_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/machine_info"
+                            android:text="@string/machine_info_vi"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
                             android:textSize="18sp"
@@ -141,7 +142,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:text="@string/begin_time_title"
+                                android:text="@string/begin_time_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -171,7 +172,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
                                 android:layout_centerVertical="true"
-                                android:text="@string/completed_time_title"
+                                android:text="@string/completed_time_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -201,7 +202,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:text="@string/temperature_title"
+                                android:text="@string/temperature_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -239,7 +240,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:text="@string/humidity_title"
+                                android:text="@string/humidity_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -280,7 +281,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
                                 android:layout_centerVertical="true"
-                                android:text="@string/food_type_title"
+                                android:text="@string/food_type_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -301,6 +302,16 @@
 
                         </RelativeLayout>
 
+                        <TextView
+                            android:id="@+id/recipe_title_list"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/recipe_title_list_vi"
+                            android:textColor="@color/design_default_color_primary_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -311,7 +322,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:text="@string/weigh_title"
+                                android:text="@string/weigh_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -345,25 +356,11 @@
                             android:id="@+id/current_temperature_humidity_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/current_temperature_humidity_title"
+                            android:text="@string/current_temperature_humidity_title_vi"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
                             android:textSize="18sp"
                             android:layout_marginStart="10dp"/>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ImageButton
-                                android:id="@+id/chart_image_button"
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:layout_alignParentStart="true"
-                                android:layout_marginStart="10dp"
-                                android:src="@mipmap/ic_action_statistics" />
-
-                        </RelativeLayout>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -375,7 +372,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:text="@string/temperature_title"
+                                android:text="@string/temperature_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
@@ -414,11 +411,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
-                                android:text="@string/humidity_title"
+                                android:text="@string/humidity_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
-                                android:textStyle="bold"
-                                tools:ignore="RelativeOverlap" />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/current_humidity_text_view"
@@ -444,11 +440,96 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.anychart.AnyChartView
+                                android:layout_width="match_parent"
+                                android:layout_height="350dp"
+                                android:layout_margin="10dp"
+                                android:id="@+id/any_chart_view"/>
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/heating_machine_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/heating_machine_title_vi"
+                            android:textColor="@color/design_default_color_primary_dark"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:layout_marginStart="10dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/level_low"
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:text="@string/seek_bar_min"
+                                android:gravity="center"
+                                android:textColor="@color/Blue"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:layout_alignParentStart="true"/>
+
+                            <TextView
+                                android:id="@+id/value_of_heating_machine"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0W"
+                                android:gravity="center"
+                                android:textColor="@color/Blue"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="40dp"
+                                android:layout_alignParentTop="true"/>
+
+                            <SeekBar
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/heating_machine_seek_bar"
+                                android:layout_centerInParent="true"
+                                android:max="200"
+                                android:min="0"
+                                android:progress="0"
+                                android:thumb="@drawable/ic_seek_bar_pointer"
+                                android:splitTrack="false"
+                                android:progressDrawable="@drawable/seek_bar_background"
+                                android:layout_toEndOf="@+id/level_low"
+                                android:layout_toStartOf="@+id/level_high" />
+
+                            <TextView
+                                android:id="@+id/level_high"
+                                android:layout_width="wrap_content"
+                                android:layout_height="70dp"
+                                android:layout_marginEnd="10dp"
+                                android:text="@string/seek_bar_max"
+                                android:gravity="center"
+                                android:textColor="@color/Blue"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:layout_alignParentEnd="true"/>
+
+                        </RelativeLayout>
+
                         <TextView
                             android:id="@+id/status_fan_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/status_fan_title"
+                            android:text="@string/status_fan_title_vi"
                             android:textColor="@color/design_default_color_primary_dark"
                             android:textStyle="bold"
                             android:textSize="18sp"
@@ -465,18 +546,18 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
                                 android:layout_centerVertical="true"
-                                android:text="@string/blower_fan_title"
+                                android:text="@string/blower_fan_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/closed_blower_fan_text_view"
+                                android:id="@+id/closed_blower_fan_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="50dp"
                                 android:layout_toStartOf="@+id/blower_fan_switch"
                                 android:layout_marginEnd="3dp"
-                                android:text="@string/off"
+                                android:text="@string/off_vi"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
@@ -486,18 +567,18 @@
                                 android:id="@+id/blower_fan_switch"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_toStartOf="@+id/opened_blower_fan_text_view"
+                                android:layout_toStartOf="@+id/opened_blower_fan_title"
                                 android:layout_marginEnd="3dp"
                                 android:layout_centerVertical="true"
                                 android:checked="false" />
 
                             <TextView
-                                android:id="@+id/opened_blower_fan_text_view"
+                                android:id="@+id/opened_blower_fan_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="50dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginEnd="10dp"
-                                android:text="@string/on"
+                                android:text="@string/on_vi"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
@@ -516,18 +597,18 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="20dp"
                                 android:layout_centerVertical="true"
-                                android:text="@string/exhaust_fan_title"
+                                android:text="@string/exhaust_fan_title_vi"
                                 android:textColor="@color/Purple"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/closed_exhaust_fan_text_view"
+                                android:id="@+id/closed_exhaust_fan_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="50dp"
                                 android:layout_toStartOf="@+id/exhaust_fan_switch"
                                 android:layout_marginEnd="3dp"
-                                android:text="@string/off"
+                                android:text="@string/off_vi"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"
@@ -538,18 +619,18 @@
                                 android:id="@+id/exhaust_fan_switch"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_toStartOf="@+id/opened_exhaust_fan_text_view"
+                                android:layout_toStartOf="@+id/opened_exhaust_fan_title"
                                 android:layout_marginEnd="3dp"
                                 android:layout_centerVertical="true"
                                 android:checked="false" />
 
                             <TextView
-                                android:id="@+id/opened_exhaust_fan_text_view"
+                                android:id="@+id/opened_exhaust_fan_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="50dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginEnd="10dp"
-                                android:text="@string/on"
+                                android:text="@string/on_vi"
                                 android:gravity="center"
                                 android:textColor="@color/Blue"
                                 android:textSize="16sp"

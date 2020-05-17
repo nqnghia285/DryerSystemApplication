@@ -136,10 +136,10 @@ public class RecipesFragment extends Fragment {
         EditText dryingTimeTextView = vi.findViewById(R.id.drying_time_text_dialog);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(R.string.recipe_title_alert_dialog);
+        builder.setTitle(R.string.recipe_title_alert_dialog_vi);
         builder.setView(vi);
         builder.setIcon(R.drawable.ic_add_box_black_24dp);
-        builder.setPositiveButton(R.string.ok, (dialog, which) -> {
+        builder.setPositiveButton(R.string.ok_vi, (dialog, which) -> {
             if (!recipeTitleTextView.getText().toString().equals("") &&
                 !foodTypeTextView.getText().toString().equals("") &&
                 !weighTextView.getText().toString().equals("") &&
@@ -149,21 +149,21 @@ public class RecipesFragment extends Fragment {
 
                 mItems.add(new RecipeItem(
                         recipeTitleTextView.getText().toString(),
-                        R.string.food_type_title,
+                        R.string.food_type_title_vi,
                         foodTypeTextView.getText().toString(),
-                        R.string.weigh_title,
+                        R.string.weigh_title_vi,
                         weighTextView.getText().toString(),
-                        R.string.temperature_title,
+                        R.string.temperature_title_vi,
                         temperatureTextView.getText().toString(),
-                        R.string.humidity_title,
+                        R.string.humidity_title_vi,
                         humidityTextView.getText().toString(),
-                        R.string.drying_time_title,
+                        R.string.drying_time_title_vi,
                         dryingTimeTextView.getText().toString()));
 
                 mAdapter.notifyDataSetChanged();
             }
         });
-        builder.setNegativeButton(R.string.cancel, (dialog, which) -> {
+        builder.setNegativeButton(R.string.cancel_vi, (dialog, which) -> {
 
         });
         builder.create().show();
@@ -171,31 +171,31 @@ public class RecipesFragment extends Fragment {
 
     private void createItemList() {
         mItems = new ArrayList<>();
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
-        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title, "Củ cải trắng", R.string.weigh_title, "300", R.string.temperature_title, "65", R.string.humidity_title, "80", R.string.drying_time_title, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
+        mItems.add(new RecipeItem("Củ cải", R.string.food_type_title_vi, "Củ cải trắng", R.string.weigh_title_vi, "300", R.string.temperature_title_vi, "65", R.string.humidity_title_vi, "80", R.string.drying_time_title_vi, "02:00:00"));
     }
 
     private void buildRecyclerView() {

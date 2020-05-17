@@ -7,47 +7,47 @@
         <item
             android:id="@+id/nav_machine_system"
             android:icon="@mipmap/ic_menu_machine_system"
-            android:title="@string/menu_machine_system" />
+            android:title="@string/menu_machine_system_vi" />
         <item
             android:id="@+id/nav_device_sensor"
             android:icon="@mipmap/ic_menu_device_sensor"
-            android:title="@string/menu_status_devices_and_sensor" />
+            android:title="@string/menu_status_devices_and_sensor_vi" />
         <item
             android:id="@+id/nav_notifications"
             android:icon="@mipmap/ic_menu_notifications"
-            android:title="@string/menu_notifications" />
+            android:title="@string/menu_notifications_vi" />
         <item
             android:id="@+id/nav_recipes"
             android:icon="@mipmap/ic_menu_recipes"
-            android:title="@string/menu_recipes" />
+            android:title="@string/menu_recipes_vi" />
         <item
             android:id="@+id/nav_tasks"
             android:icon="@mipmap/ic_menu_tasks"
-            android:title="@string/menu_tasks" />
+            android:title="@string/menu_tasks_vi" />
         <item
             android:id="@+id/nav_statistics"
             android:icon="@mipmap/ic_menu_statistics"
-            android:title="@string/menu_statistical" />
+            android:title="@string/menu_statistical_vi" />
     </group>
 
-    <item android:title="Ứng dụng">
+    <item android:title="@string/application_vi">
         <menu>
             <item
                 android:id="@+id/nav_account"
                 android:icon="@mipmap/ic_menu_account"
-                android:title="@string/menu_account" />
+                android:title="@string/menu_account_vi" />
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@mipmap/ic_menu_settings"
-                android:title="@string/menu_settings" />
+                android:title="@string/menu_settings_vi" />
             <item
                 android:id="@+id/nav_about"
                 android:icon="@mipmap/ic_menu_about"
-                android:title="@string/menu_about" />
+                android:title="@string/menu_about_vi" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@mipmap/ic_menu_logout"
-                android:title="@string/menu_logout" />
+                android:title="@string/menu_logout_vi" />
         </menu>
     </item>
 

@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kiểm tra vân tay"
+            android:text="@string/check_fingerprint_vi"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="@color/White"
@@ -34,7 +34,7 @@
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hủy"
+            android:text="@string/cancel_vi"
             android:textColor="@android:color/black"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

@@ -136,34 +136,34 @@ public class MachineSystemFragment extends Fragment {
         EditText machine = vi.findViewById(R.id.machine_text_dialog);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(R.string.machine_title_alert_dialog);
+        builder.setTitle(R.string.machine_title_alert_dialog_vi);
         builder.setView(vi);
         builder.setIcon(R.drawable.ic_add_box_black_24dp);
-        builder.setPositiveButton(R.string.ok, (dialog, which) -> {
+        builder.setPositiveButton(R.string.ok_vi, (dialog, which) -> {
             if (!machine.getText().toString().equals("")) {
 
                 mItems.add(new MachineItem(
                         R.drawable.ic_menu_camera,
                         machine.getText().toString(),
-                        R.string.status_title,
-                        R.string.running,
-                        R.string.begin_time_title,
+                        R.string.status_title_vi,
+                        R.string.running_vi,
+                        R.string.begin_time_title_vi,
                         "12:00:00",
-                        R.string.completed_time_title,
+                        R.string.completed_time_title_vi,
                         "13:30:00",
-                        R.string.food_type_title,
-                        R.string.orange,
-                        R.string.weigh_title,
+                        R.string.food_type_title_vi,
+                        R.string.orange_vi,
+                        R.string.weigh_title_vi,
                         "300",
-                        R.string.current_temperature_title,
+                        R.string.current_temperature_title_vi,
                         "65",
-                        R.string.current_humidity_title,
+                        R.string.current_humidity_title_vi,
                         "72"));
 
                 mAdapter.notifyDataSetChanged();
             }
         });
-        builder.setNegativeButton(R.string.cancel, (dialog, which) -> {
+        builder.setNegativeButton(R.string.cancel_vi, (dialog, which) -> {
 
         });
         builder.create().show();
@@ -187,16 +187,16 @@ public class MachineSystemFragment extends Fragment {
                 EditText machine = vi.findViewById(R.id.machine_text_dialog);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle(R.string.machine_title_alert_dialog_2);
+                builder.setTitle(R.string.machine_title_alert_dialog_2_vi);
                 builder.setView(vi);
                 builder.setIcon(R.drawable.ic_add_box_black_24dp);
-                builder.setPositiveButton(R.string.ok, (dialog, which) -> {
+                builder.setPositiveButton(R.string.ok_vi, (dialog, which) -> {
                     if (!machine.getText().toString().equals("")) {
                         mItems.get(mPosition).setTitle(machine.getText().toString());
                         mAdapter.notifyDataSetChanged();
                     }
                 });
-                builder.setNegativeButton(R.string.cancel, (dialog, which) -> {
+                builder.setNegativeButton(R.string.cancel_vi, (dialog, which) -> {
 
                 });
                 builder.create().show();
@@ -232,11 +232,11 @@ public class MachineSystemFragment extends Fragment {
 
     private void createItemList() {
         mItems = new ArrayList<>();
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 01", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
-        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 02", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 03", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
-        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 04", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
-        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 05", R.string.status_title, R.string.running, R.string.begin_time_title, "12:00:00", R.string.completed_time_title, "13:30:00", R.string.food_type_title, R.string.orange, R.string.weigh_title, "300", R.string.current_temperature_title, "65", R.string.current_humidity_title, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 01", R.string.status_title_vi, R.string.running_vi, R.string.begin_time_title_vi, "12:00:00", R.string.completed_time_title_vi, "13:30:00", R.string.food_type_title_vi, R.string.orange_vi, R.string.weigh_title_vi, "300", R.string.current_temperature_title_vi, "65", R.string.current_humidity_title_vi, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 02", R.string.status_title_vi, R.string.running_vi, R.string.begin_time_title_vi, "12:00:00", R.string.completed_time_title_vi, "13:30:00", R.string.food_type_title_vi, R.string.orange_vi, R.string.weigh_title_vi, "300", R.string.current_temperature_title_vi, "65", R.string.current_humidity_title_vi, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 03", R.string.status_title_vi, R.string.running_vi, R.string.begin_time_title_vi, "12:00:00", R.string.completed_time_title_vi, "13:30:00", R.string.food_type_title_vi, R.string.orange_vi, R.string.weigh_title_vi, "300", R.string.current_temperature_title_vi, "65", R.string.current_humidity_title_vi, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_add_box_black_24dp, "Máy số 04", R.string.status_title_vi, R.string.running_vi, R.string.begin_time_title_vi, "12:00:00", R.string.completed_time_title_vi, "13:30:00", R.string.food_type_title_vi, R.string.orange_vi, R.string.weigh_title_vi, "300", R.string.current_temperature_title_vi, "65", R.string.current_humidity_title_vi, "72"));
+        mItems.add(new MachineItem(R.drawable.ic_menu_camera, "Máy số 05", R.string.status_title_vi, R.string.running_vi, R.string.begin_time_title_vi, "12:00:00", R.string.completed_time_title_vi, "13:30:00", R.string.food_type_title_vi, R.string.orange_vi, R.string.weigh_title_vi, "300", R.string.current_temperature_title_vi, "65", R.string.current_humidity_title_vi, "72"));
     }
 
     private void buildRecyclerView() {
@@ -266,34 +266,17 @@ public class MachineSystemFragment extends Fragment {
         action.setPosition(position);
         action.setImageResource(mItems.get(position).getImageResource());
         action.setMachineTitle(mItems.get(position).getTitle());
-        action.setRecipeTitleList(getString(R.string.recipe_title_list));
-        action.setMachineInfo(getString(R.string.settings_info));
-        action.setBeginTimeTitle(getString(R.string.begin_time_title));
-        action.setBeginTimeTextView("12:30:25");
-        action.setCompletedTimeTitle(getString(R.string.completed_time_title));
-        action.setCompletedTimeTextView("13:30:25");
-        action.setTemperatureTitle(getString(R.string.temperature_title));
+        action.setBeginTimeTextView("00:00");
+        action.setCompletedTimeTextView("00:00");
         action.setTemperatureTextView("70");
-        action.setHumidityTitle(getString(R.string.humidity_title));
         action.setHumidityTextView("80");
-        action.setFoodTypeTitle(getString(R.string.food_type_title));
         action.setFoodTypeTextView("Chile");
-        action.setWeighTitle(getString(R.string.weigh_title));
         action.setWeighTextView("300");
-        action.setCurrentTemperatureHumidityTitle(getString(R.string.current_temperature_humidity_title));
-        action.setCurrentTemperatureTitle(getString(R.string.temperature_title));
         action.setCurrentTemperatureTextView("65");
-        action.setCurrentHumidityTitle(getString(R.string.humidity_title));
         action.setCurrentHumidityTextView("72");
-        action.setStatusFanTitle(getString(R.string.status_fan_title));
-        action.setBlowerFanTitle(getString(R.string.blower_fan_title));
-        action.setClosedBlowerFanTextView(getString(R.string.off));
+        action.setHeatingMachineSeekBar(100);
         action.setBlowerFanSwitch(true);
-        action.setOpenedBlowerFanTextView(getString(R.string.on));
-        action.setExhaustFanTitle(getString(R.string.exhaust_fan_title));
-        action.setClosedExhaustFanTextView(getString(R.string.off));
         action.setExhaustFanSwitch(true);
-        action.setOpenedExhaustFanTextView(getString(R.string.on));
 
         navController.navigate(action);
     }

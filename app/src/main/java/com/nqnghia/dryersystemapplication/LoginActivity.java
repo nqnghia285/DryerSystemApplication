@@ -8,6 +8,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
@@ -54,11 +55,14 @@ import javax.crypto.SecretKey;
 
 public class LoginActivity extends AppCompatActivity implements ServiceConnection {
     private static final String TAG = "LoginActivity";
+    private TextView tvDesc;
+    private TextView tvLogin;
     private EditText username;
     private EditText password;
     private Button login;
     private ImageView fingerprint;
     private TextView forgotPassword;
+    private TextView fingerprintDesc;
 
     private FingerprintManager fingerprintManager;
     private KeyguardManager keyguardManager;
@@ -66,6 +70,7 @@ public class LoginActivity extends AppCompatActivity implements ServiceConnectio
     private KeyStore keyStore;
     private Cipher cipher;
     private String KEY_NAME = "AndroidKey";
+    private Boolean langVi;
 
     private LocalService.LocalBinder mLocalBinder;
 
@@ -75,13 +80,39 @@ public class LoginActivity extends AppCompatActivity implements ServiceConnectio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+//        Phan code nay nen nam trong phan settings cua app
+//        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(
+//                getString(R.string.settings), Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.putBoolean(getString(R.string.lang_vi), true);
+//        editor.apply();
+
+        // Kiem tra cai dat ngon ngu vi hay en
+        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        langVi = sharedPreferences.getBoolean(getString(R.string.lang_vi), true);
+
         // Tao service va lien ket voi class hien tai
         bindService(new Intent(this, LocalService.class), this, Context.BIND_AUTO_CREATE);
 
+        tvDesc = findViewById(R.id.tv_desc);
+        tvLogin = findViewById(R.id.tv_login);
         username = findViewById(R.id.username_edit_text);
         password = findViewById(R.id.password_edit_text);
         forgotPassword = findViewById(R.id.forgot_text_view);
         login = findViewById(R.id.login_button);
+        fingerprintDesc = findViewById(R.id.fingerprint_description);
+
+        if (langVi) {
+            tvDesc.setText(R.string.login_description_vi);
+            tvLogin.setText(R.string.login_title_vi);
+            username.setHint(R.string.hint_account_vi);
+            password.setHint(R.string.hint_password_vi);
+            login.setText(R.string.login_title_vi);
+            forgotPassword.setText(R.string.forgot_password_vi);
+            fingerprintDesc.setText(R.string.login_by_fingerprint_vi);
+        } else {
+            //TODO
+        }
 
         login.setOnClickListener(v -> startMainActivity());
 
